@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import view.ResizableCanvas?>
+<?import javafx.geometry.Insets?>
+<?import org.controlsfx.control.CheckComboBox?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Controller">
+    <center>
+        <ResizableCanvas fx:id="canvas" GridPane.rowIndex="0" GridPane.columnIndex="0"
+                         width="Infinity" height="Infinity"
+                         onMouseDragged="#move" onMousePressed="#getPoint"
+                         onScroll="#zoom"/>
+    </center>
+
+    <right>
+        <GridPane GridPane.rowIndex="0" GridPane.columnIndex="1" minWidth="200" maxWidth="250" vgap="5" hgap="5">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+
+            <Label text="Радиус" GridPane.rowIndex="0" GridPane.columnIndex="0" minWidth="60"/>
+            <TextField fx:id="radiusTextField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Имя" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="nameTextField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Метки" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <CheckComboBox fx:id="tagsCheckComboBox" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Button text="Найти" onAction="#checkIn"
+                    GridPane.rowIndex="3" GridPane.columnIndex="1" GridPane.valignment="BASELINE"/>
+            <Button text="Открыть" onAction="#openFile"
+                    GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        </GridPane>
+    </right>
+
+
+
+</BorderPane>
