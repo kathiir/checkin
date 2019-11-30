@@ -1,9 +1,11 @@
 import com.bedatadriven.jackson.datatype.jts.JtsModule;
 import com.bedatadriven.jackson.datatype.jts.serialization.GeometryDeserializer;
 import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.databind.jsontype.BasicPolymorphicTypeValidator;
 import com.fasterxml.jackson.databind.jsontype.PolymorphicTypeValidator;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.sun.javafx.geom.Area;
 import command.CheckCommand;
 import command.Invoker;
@@ -107,9 +109,18 @@ public class Controller implements Initializable, ResizableCanvas.PaintListener 
         File file = fileChooser.showOpenDialog(null);
 
         if (file != null) {
+            ObjectMapper mapper = new ObjectMapper();
+            SimpleModule module = new SimpleModule();
+            module.addDeserializer(MapObject.class, new MapObjectDeserializer(MapObject.class));
+            mapper.registerModule(module);
 
             JsonFactory jsonFactory = new JsonFactory();
             try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+
+                mapper.readValue(jsonFactory.createParser(file),
+                        MapObject.class);
+
+
 
                 paint();
 
@@ -143,6 +154,9 @@ public class Controller implements Initializable, ResizableCanvas.PaintListener 
         Random random = new Random();
 
         List<MapObject> objectList = new ArrayList<>();
+
+        lineString = geometryFactory.createLineString(new Coordinate[]{new Coordinate(20, 100), new Coordinate(20,  90)});
+        objectList.add(new LineObject(lineString, "Street " + 0.1 + ":" + 12 + "-v", createRandomTagList(random), random.nextInt(30)));
 
         for (int i = 0; i < (int) canvas.getHeight() / 100; i++) {
             for (int j = 0; j < (int) canvas.getWidth() / 100; j++) {
@@ -323,6 +337,19 @@ public class Controller implements Initializable, ResizableCanvas.PaintListener 
         }
 
         checkMap.setObjects(objectList);
+
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.enable(SerializationFeature.INDENT_OUTPUT);
+
+        try {
+            mapper.writeValue(new File("output.json"), checkMap.getAllObjects().get(0));
+        } catch (JsonGenerationException e) {
+            e.printStackTrace();
+        } catch (JsonMappingException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 

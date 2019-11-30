@@ -2,6 +2,7 @@ package objects;
 
 import com.bedatadriven.jackson.datatype.jts.serialization.GeometryDeserializer;
 import com.bedatadriven.jackson.datatype.jts.serialization.GeometrySerializer;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -12,16 +13,10 @@ import world.Tags;
 import java.util.ArrayList;
 import java.util.List;
 
-//@JsonDeserialize(as = PointObject.class)
-//@JsonTypeInfo(
-//        use = JsonTypeInfo.Id.CLASS,
-//        include = JsonTypeInfo.As.PROPERTY,
-//        property = "@class"
-//)
+@JsonDeserialize(using =  MapObjectDeserializer.class)
 public class PointObject extends MapObject {
     @JsonSerialize(using = GeometrySerializer.class)
-    @JsonDeserialize(contentUsing = GeometryDeserializer.class)
-//    @JsonProperty("geometry")
+//    @JsonDeserialize(contentUsing = GeometryDeserializer.class)
     private Point geometry;
 
     public PointObject() {
@@ -38,19 +33,9 @@ public class PointObject extends MapObject {
         this.setPeopleCount(peopleCount);
         this.setChildren(new ArrayList<>());
     }
-
-
-//    @JsonIgnore
+    @JsonIgnore
     @Override
     public Geometry getGeometry() {
         return geometry;
     }
-
-    public void setGeometry(Point geometry) {
-        this.geometry = geometry;
-    }
-
-//    public Point getPoint() {
-//        return point;
-//    }
 }

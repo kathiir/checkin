@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4d3905f0-ec27-444f-9f4f-bd9c8567c07e" name="Default Changelist" comment="" />
+    <list default="true" id="4d3905f0-ec27-444f-9f4f-bd9c8567c07e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/objects/MapObjectDeserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/output.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/objects/LineObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objects/LineObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/objects/MapObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objects/MapObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/objects/OblectsHodunok.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objects/MapObjectsJSON.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/objects/PointObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objects/PointObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/objects/PolygonObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objects/PolygonObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/world/CheckMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/world/CheckMap.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +27,10 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -39,6 +54,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -92,6 +108,7 @@
       <workItem from="1574830088676" duration="5077000" />
       <workItem from="1575044037319" duration="2034000" />
       <workItem from="1575046487819" duration="5283000" />
+      <workItem from="1575130501125" duration="12380000" />
     </task>
     <servers />
   </component>
@@ -107,10 +124,54 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="137" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1575051052216" />
-    <state x="379" y="192" key="com.intellij.ide.util.TipDialog" timestamp="1575047031023">
+    <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser" timestamp="1575131464254">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="379" y="192" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1575047031023" />
+    <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1575131464254" />
+    <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1575144601710">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1575144601710" />
+    <state x="463" y="123" key="FileChooserDialogImpl" timestamp="1575130824644">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1575130824644" />
+    <state width="1323" height="228" key="GridCell.Tab.0.bottom" timestamp="1575141014019">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="228" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1575141014019" />
+    <state width="1323" height="228" key="GridCell.Tab.0.center" timestamp="1575141014019">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="228" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1575141014019" />
+    <state width="1323" height="228" key="GridCell.Tab.0.left" timestamp="1575141014019">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="228" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1575141014019" />
+    <state width="1323" height="228" key="GridCell.Tab.0.right" timestamp="1575141014019">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="228" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1575141014019" />
+    <state x="184" y="11" key="SettingsEditor" timestamp="1575130836415">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="184" y="11" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1575130836415" />
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2" timestamp="1575130930954">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1575130930954" />
+    <state x="379" y="192" key="com.intellij.ide.util.TipDialog" timestamp="1575130564274">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="379" y="192" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1575130564274" />
+    <state x="782" y="41" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1575135369672">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="782" y="41" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.738@0.0.1366.738" timestamp="1575135369672" />
+    <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1575131200704">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1575131200704" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1575052658376">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

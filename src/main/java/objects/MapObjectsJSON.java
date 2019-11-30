@@ -2,7 +2,7 @@ package objects;
 
 import java.util.List;
 
-public class OblectsHodunok {
+public class MapObjectsJSON {
 
     List<MapObject> list;
 

@@ -20,6 +20,7 @@ public class CheckMap {
     public CheckMap() {
         objects = new ArrayList<>();
         comparatorType = MapObjectComparatorType.SIMPLE;
+        map = new HashMap<>();
     }
 
     public void checkout(UserData userData) {
@@ -84,8 +85,9 @@ public class CheckMap {
     public void setObjects(List<MapObject> list) {
         for (MapObject object :
                 list) {
-            addObjectToMap(object);
+            System.out.println(object.getName());
             map.put(object, new HashSet<>());
+            addObjectToMap(object);
         }
     }
 

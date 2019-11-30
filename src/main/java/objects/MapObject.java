@@ -8,16 +8,17 @@ import world.Tags;
 import java.util.ArrayList;
 import java.util.List;
 
-@JsonTypeInfo(
-        use = JsonTypeInfo.Id.CLASS,
-        include = JsonTypeInfo.As.PROPERTY,
-        property = "@class"
-)
+//@JsonTypeInfo(
+//        use = JsonTypeInfo.Id.CLASS,
+//        include = JsonTypeInfo.As.PROPERTY,
+//        property = "@class"
+//)
 @JsonSubTypes({
         @JsonSubTypes.Type(value = LineObject.class),
         @JsonSubTypes.Type(value = PointObject.class),
         @JsonSubTypes.Type(value = PolygonObject.class)
 })
+@JsonDeserialize(using =  MapObjectDeserializer.class)
 public class MapObject {
     private String name;
     private List<Tags> tags;
@@ -58,7 +59,7 @@ public class MapObject {
         this.children = children;
     }
 
-    @JsonIgnore
+//    @JsonIgnore
     public Geometry getGeometry() {
         return null;
     }
