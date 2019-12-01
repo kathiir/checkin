@@ -243,7 +243,6 @@ public class Controller implements Initializable, ResizableCanvas.PaintListener 
 
         Coordinate[] shell = polygon.getExteriorRing().getCoordinates();
 
-        Area area = new Area();
         ScreenPoint point = sc.r2s(shell[0]);
         context.beginPath();
         context.moveTo(point.getX(), point.getY());

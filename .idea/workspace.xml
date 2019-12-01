@@ -3,18 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4d3905f0-ec27-444f-9f4f-bd9c8567c07e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/output.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/CheckCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command/CheckCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command/Invoker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/objects/MapObjectDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/objects/MapObjectDeserializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/objects/MapObjectsJSON.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/ScreenConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ScreenConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/world/CheckMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/world/CheckMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/world/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/world/Request.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/world/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/world/UserData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +102,7 @@
       <workItem from="1575046487819" duration="5283000" />
       <workItem from="1575130501125" duration="14108000" />
       <workItem from="1575192703018" duration="8694000" />
-      <workItem from="1575203532491" duration="11470000" />
+      <workItem from="1575203532491" duration="12406000" />
     </task>
     <task id="LOCAL-00001" summary="Added working Json Deserialization">
       <created>1575144650437</created>
@@ -122,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575144650437</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fixed bugs and added UI">
+      <created>1575215512663</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1575215512663</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,7 +126,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added working Json Deserialization" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added working Json Deserialization" />
+    <MESSAGE value="Fixed bugs and added UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bugs and added UI" />
   </component>
   <component name="WindowStateProjectService">
     <state x="400" y="27" key="#Unnamed" timestamp="1575051023759">
@@ -145,10 +142,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1575196324582" />
-    <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1575144648624">
+    <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1575215510820">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1575144648624" />
+    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1575215510820" />
     <state x="463" y="123" key="FileChooserDialogImpl" timestamp="1575130824644">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
