@@ -1,8 +1,6 @@
 package world;
 
-import com.vividsolutions.jts.geom.Coordinate;
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.GeometryFactory;
+import com.vividsolutions.jts.geom.*;
 import com.vividsolutions.jts.util.GeometricShapeFactory;
 import comparator.ComparatorFactory;
 import comparator.MapObjectComparatorType;
@@ -23,9 +21,17 @@ public class CheckMap {
         map = new HashMap<>();
     }
 
+    public CheckMap(List<MapObject> objects) {
+        map = new HashMap<>();
+        this.objects = new ArrayList<>();
+        setObjects(objects);
+        comparatorType = MapObjectComparatorType.SIMPLE;
+
+    }
+
     public void checkout(UserData userData) {
-        for (Set<UserData> set:
-                map.values()){
+        for (Set<UserData> set :
+                map.values()) {
             if (set.contains(userData)) {
                 set.remove(userData);
                 return;
@@ -34,6 +40,8 @@ public class CheckMap {
     }
 
     public void checkIn(Request request) {
+        checkout(request.getUser());
+
         GeometricShapeFactory gsc = new GeometricShapeFactory();
         gsc.setCentre(new Coordinate(request.getX(), request.getY()));
         gsc.setSize(2 * request.getR());
@@ -48,6 +56,7 @@ public class CheckMap {
             }
         }
 
+
         ComparatorFactory factory = new ComparatorFactory();
 
         Comparator<MapObject> c = factory.getComparator(comparatorType, request.getUser().getTags());
@@ -56,9 +65,7 @@ public class CheckMap {
         }
 
         MapObject o = list.get(0);
-        //поправить на случай если ничего не подойдет
 
-        //добавить команду
 
         for (int i = 1; i < list.size(); i++) {
             if (c.compare(list.get(i), o) > 0) {
@@ -67,8 +74,6 @@ public class CheckMap {
         }
 
         map.get(o).add(request.getUser());
-
-//        return o;
     }
 
     //--------------------//
@@ -82,7 +87,7 @@ public class CheckMap {
         return list;
     }
 
-    public void setObjects(List<MapObject> list) {
+    private void setObjects(List<MapObject> list) {
         for (MapObject object :
                 list) {
             System.out.println(object.getName());
@@ -121,6 +126,45 @@ public class CheckMap {
         parent.getChildren().add(child);
     }
 
+    public MapObject getMapObject(UserData userData) {
+        for (Map.Entry<MapObject, Set<UserData>> entry :
+                map.entrySet()) {
+            if (entry.getValue().contains(userData))
+                return entry.getKey();
+        }
+        return null;
+    }
+
+    public MapObject getMapObjectByCoordinate(Coordinate coordinate) {
+        GeometricShapeFactory gsc = new GeometricShapeFactory();
+        gsc.setCentre(coordinate);
+        gsc.setSize(3);
+        gsc.setNumPoints(12);
+        Geometry area = gsc.createCircle();
+
+        for (MapObject object :
+                objects) {
+            if (object.getGeometry().intersects(area)) {
+                return getMapObject(area, object);
+            }
+        }
+
+        return null;
+    }
+
+    private MapObject getMapObject(Geometry point, MapObject mapObject) {
+        if (!mapObject.getGeometry().intersects(point)) {
+            return null;
+        }
+        for (MapObject object :
+                mapObject.getChildren()) {
+            if (object.getGeometry().intersects(point)) {
+                return getMapObject(point, object);
+            }
+        }
+
+        return mapObject;
+    }
     //--------------//
 
     public void setComparatorType(MapObjectComparatorType comparatorType) {

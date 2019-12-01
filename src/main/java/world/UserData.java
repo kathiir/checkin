@@ -24,8 +24,7 @@ public class UserData {
 
     //?
     public List<Tags> getTags() {
-        return new ArrayList<>(tags);
-//        return tags;
+        return tags;
     }
 
     @Override

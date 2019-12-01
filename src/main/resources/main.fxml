@@ -13,32 +13,49 @@
         <ResizableCanvas fx:id="canvas" GridPane.rowIndex="0" GridPane.columnIndex="0"
                          width="Infinity" height="Infinity"
                          onMouseDragged="#move" onMousePressed="#getPoint"
+                         onContextMenuRequested="#getSelectedObject"
                          onScroll="#zoom"/>
     </center>
 
     <right>
         <GridPane GridPane.rowIndex="0" GridPane.columnIndex="1" minWidth="200" maxWidth="250" vgap="5" hgap="5">
             <padding>
-                <Insets bottom="10" left="10" right="10" top="10" />
+                <Insets bottom="10" left="10" right="10" top="10"/>
             </padding>
 
-            <Label text="Радиус" GridPane.rowIndex="0" GridPane.columnIndex="0" minWidth="60"/>
-            <TextField fx:id="radiusTextField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <GridPane GridPane.rowIndex="0" GridPane.columnIndex="0" hgap="10">
+                <Label text="x" GridPane.rowIndex="0" GridPane.columnIndex="0" minWidth="30" alignment="CENTER_RIGHT"/>
+                <TextField fx:id="xTextField" GridPane.rowIndex="0" GridPane.columnIndex="1" maxWidth="60"/>
+                <Label text="y" GridPane.rowIndex="0" GridPane.columnIndex="2" minWidth="30" alignment="CENTER_RIGHT"/>
+                <TextField fx:id="yTextField" GridPane.rowIndex="0" GridPane.columnIndex="3" maxWidth="60"/>
+            </GridPane>
+            <GridPane GridPane.rowIndex="1" GridPane.columnIndex="0" vgap="5" hgap="5">
+                <Label text="Радиус" GridPane.rowIndex="0" GridPane.columnIndex="0" minWidth="60"/>
+                <TextField fx:id="radiusTextField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
 
-            <Label text="Имя" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-            <TextField fx:id="nameTextField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                <Label text="Имя" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="nameTextField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
 
-            <Label text="Метки" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-            <CheckComboBox fx:id="tagsCheckComboBox" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                <Label text="Метки" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <CheckComboBox fx:id="tagsCheckComboBox" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
 
-            <Button text="Найти" onAction="#checkIn"
-                    GridPane.rowIndex="3" GridPane.columnIndex="1" GridPane.valignment="BASELINE"/>
-            <Button text="Открыть" onAction="#openFile"
-                    GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                <ComboBox GridPane.rowIndex="3" GridPane.columnIndex="1"
+                          fx:id="comparatorSelector" onAction="#changeComparator"/>
+
+                <Button text="Найти" onAction="#checkIn"
+                        GridPane.rowIndex="4" GridPane.columnIndex="1" GridPane.valignment="BASELINE"/>
+                <Button text="Undo" onAction="#undoCheckin"
+                        GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+                <Button text="Открыть" onAction="#openFile"
+                        GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <GridPane GridPane.rowIndex="2" GridPane.columnIndex="0">
+                <TextArea fx:id="objectInf" wrapText="true" editable="false"/>
+            </GridPane>
 
         </GridPane>
     </right>
-
 
 
 </BorderPane>

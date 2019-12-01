@@ -81,7 +81,7 @@ public class MapObjectDeserializer extends StdDeserializer<MapObject> {
                 JsonNode ring = array.get(0);
                 Coordinate[] coordinates = new Coordinate[ring.size()];
                 for (int i = 0; i < ring.size(); i++) {
-                    coordinates[i] = new Coordinate(ring.get(0).asDouble(), ring.get(1).asDouble());
+                    coordinates[i] = new Coordinate(ring.get(i).get(0).asDouble(), ring.get(i).get(1).asDouble());
                 }
                 LinearRing shell = factory.createLinearRing(coordinates);
 
@@ -89,7 +89,7 @@ public class MapObjectDeserializer extends StdDeserializer<MapObject> {
                 for (int i = 1; i < array.size(); i++) {
                     coordinates = new Coordinate[array.get(i).size()];
                     for (int j = 0; j < array.get(i).size(); j++) {
-                        coordinates[j] = new Coordinate(array.get(i).get(0).asDouble(), array.get(i).get(1).asDouble());
+                        coordinates[j] = new Coordinate(array.get(i).get(j).get(0).asDouble(), array.get(i).get(j).get(1).asDouble());
                     }
                     holes[i - 1] = factory.createLinearRing(coordinates);
                 }

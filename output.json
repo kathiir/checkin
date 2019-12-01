@@ -1,9 +1,1929 @@
-{
+[ {
   "name" : "Street 0.1:12-v",
-  "tags" : [ "MOVIE_RENTAL", "MEAL_DELIVERY" ],
-  "peopleCount" : 0,
+  "tags" : [ "PAINTER", "PARK", "CAR_DEALER" ],
+  "peopleCount" : 3,
   "geometry" : {
     "type" : "LineString",
     "coordinates" : [ [ 20.0, 100.0 ], [ 20.0, 90.0 ] ]
   }
-}
+}, {
+  "name" : "Street 0:0-v",
+  "tags" : [ "CAR_REPAIR", "HOSPITAL", "PAINTER", "EMBASSY" ],
+  "peopleCount" : 21,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 10.0, 0.0 ], [ 10.0, 90.0 ] ]
+  }
+}, {
+  "name" : "Street 0:0-h",
+  "tags" : [ "ELECTRICIAN", "CAMPGROUND", "LIGHT_RAIL_STATION", "STORE" ],
+  "peopleCount" : 29,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 10.0, 90.0 ], [ 100.0, 90.0 ] ]
+  }
+}, {
+  "name" : "House 0:0",
+  "tags" : [ "CONVENIENCE_STORE" ],
+  "peopleCount" : 41,
+  "geometry" : {
+    "type" : "Polygon",
+    "coordinates" : [ [ [ 40.0, 10.0 ], [ 40.0, 70.0 ], [ 90.0, 70.0 ], [ 90.0, 10.0 ], [ 40.0, 10.0 ] ] ]
+  }
+}, {
+  "name" : "Inner-1 0:0-1",
+  "tags" : [ "CAR_RENTAL", "PAINTER" ],
+  "peopleCount" : 35,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 50.0, 20.0 ]
+  }
+}, {
+  "name" : "Inner-1 0:0-2",
+  "tags" : [ "LIQUOR_STORE" ],
+  "peopleCount" : 31,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 50.0, 40.0 ]
+  }
+}, {
+  "name" : "Inner-1 0:0-3",
+  "tags" : [ "PLUMBER", "CASINO", "POST_OFFICE" ],
+  "peopleCount" : 27,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 50.0, 60.0 ]
+  }
+}, {
+  "name" : "Inner-1 0:0-1",
+  "tags" : [ "HOME_GOODS_STORE", "LOCAL_GOVERNMENT_OFFICE", "FLORIST" ],
+  "peopleCount" : 26,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 75.0, 20.0 ]
+  }
+}, {
+  "name" : "Inner-1 0:0-2",
+  "tags" : [ "BUS_STATION", "AIRPORT" ],
+  "peopleCount" : 25,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 75.0, 40.0 ]
+  }
+}, {
+  "name" : "Inner-1 0:0-3",
+  "tags" : [ "BUS_STATION", "LIGHT_RAIL_STATION" ],
+  "peopleCount" : 15,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 75.0, 60.0 ]
+  }
+}, {
+  "name" : "Tree 0:0-1",
+  "tags" : [ "FURNITURE_STORE", "FIRE_STATION", "BOWLING_ALLEY", "HARDWARE_STORE" ],
+  "peopleCount" : 11,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 25.0, 20.0 ]
+  }
+}, {
+  "name" : "Tree 0:0-2",
+  "tags" : [ "FIRE_STATION", "GROCERY_OR_SUPERMARKET" ],
+  "peopleCount" : 2,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 25.0, 40.0 ]
+  }
+}, {
+  "name" : "Tree 0:0-3",
+  "tags" : [ "HOME_GOODS_STORE", "PARKING" ],
+  "peopleCount" : 9,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 25.0, 60.0 ]
+  }
+}, {
+  "name" : "Street 0:1-v",
+  "tags" : [ "PRIMARY_SCHOOL" ],
+  "peopleCount" : 2,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 190.0, 0.0 ], [ 190.0, 90.0 ] ]
+  }
+}, {
+  "name" : "Street 0:1-h",
+  "tags" : [ "LIGHT_RAIL_STATION", "DENTIST", "NIGHT_CLUB" ],
+  "peopleCount" : 20,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 100.0, 90.0 ], [ 190.0, 90.0 ] ]
+  }
+}, {
+  "name" : "House 0:1",
+  "tags" : [ "CONVENIENCE_STORE" ],
+  "peopleCount" : 4,
+  "geometry" : {
+    "type" : "Polygon",
+    "coordinates" : [ [ [ 110.0, 10.0 ], [ 110.0, 70.0 ], [ 160.0, 70.0 ], [ 160.0, 10.0 ], [ 110.0, 10.0 ] ] ]
+  }
+}, {
+  "name" : "Inner-1 0:1-1",
+  "tags" : [ "MOVIE_THEATER", "UNIVERSITY", "CONVENIENCE_STORE" ],
+  "peopleCount" : 21,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 150.0, 20.0 ]
+  }
+}, {
+  "name" : "Inner-1 0:1-2",
+  "tags" : [ "TRAVEL_AGENCY", "HINDU_TEMPLE", "LAWYER", "CAR_WASH" ],
+  "peopleCount" : 32,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 150.0, 40.0 ]
+  }
+}, {
+  "name" : "Inner-1 0:1-3",
+  "tags" : [ "CAR_DEALER", "STORE", "FUNERAL_HOME" ],
+  "peopleCount" : 22,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 150.0, 60.0 ]
+  }
+}, {
+  "name" : "Inner-2 0:1-1",
+  "tags" : [ "STORAGE", "HOME_GOODS_STORE", "LIBRARY" ],
+  "peopleCount" : 26,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 125.0, 20.0 ]
+  }
+}, {
+  "name" : "Inner-2 0:1-2",
+  "tags" : [ "BANK", "BICYCLE_STORE", "AIRPORT", "TRAVEL_AGENCY" ],
+  "peopleCount" : 11,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 125.0, 40.0 ]
+  }
+}, {
+  "name" : "Inner-2 0:1-3",
+  "tags" : [ "GAS_STATION", "STORAGE" ],
+  "peopleCount" : 6,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 125.0, 60.0 ]
+  }
+}, {
+  "name" : "Tree 0:1-1",
+  "tags" : [ "PARKING", "NIGHT_CLUB" ],
+  "peopleCount" : 17,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 175.0, 20.0 ]
+  }
+}, {
+  "name" : "Tree 0:1-2",
+  "tags" : [ "COURTHOUSE", "CITY_HALL", "HARDWARE_STORE" ],
+  "peopleCount" : 7,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 175.0, 40.0 ]
+  }
+}, {
+  "name" : "Tree 0:1-3",
+  "tags" : [ "STORE" ],
+  "peopleCount" : 18,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 175.0, 60.0 ]
+  }
+}, {
+  "name" : "Street 0:2-v",
+  "tags" : [ "BUS_STATION", "UNIVERSITY", "SECONDARY_SCHOOL", "LOCKSMITH" ],
+  "peopleCount" : 18,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 210.0, 0.0 ], [ 210.0, 90.0 ] ]
+  }
+}, {
+  "name" : "Street 0:2-h",
+  "tags" : [ "CITY_HALL", "FUNERAL_HOME", "CHURCH", "LOCKSMITH" ],
+  "peopleCount" : 1,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 210.0, 90.0 ], [ 300.0, 90.0 ] ]
+  }
+}, {
+  "name" : "House 0:2",
+  "tags" : [ "CHURCH" ],
+  "peopleCount" : 5,
+  "geometry" : {
+    "type" : "Polygon",
+    "coordinates" : [ [ [ 240.0, 10.0 ], [ 240.0, 70.0 ], [ 290.0, 70.0 ], [ 290.0, 10.0 ], [ 240.0, 10.0 ] ] ]
+  }
+}, {
+  "name" : "Inner-1 0:2-1",
+  "tags" : [ "CAR_RENTAL", "GAS_STATION" ],
+  "peopleCount" : 8,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 250.0, 20.0 ]
+  }
+}, {
+  "name" : "Inner-1 0:2-2",
+  "tags" : [ "LOCAL_GOVERNMENT_OFFICE", "ART_GALLERY", "PAINTER", "ELECTRONICS_STORE" ],
+  "peopleCount" : 39,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 250.0, 40.0 ]
+  }
+}, {
+  "name" : "Inner-1 0:2-3",
+  "tags" : [ "GROCERY_OR_SUPERMARKET", "CONVENIENCE_STORE" ],
+  "peopleCount" : 2,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 250.0, 60.0 ]
+  }
+}, {
+  "name" : "Inner-1 0:2-1",
+  "tags" : [ "CAFE", "CAR_REPAIR", "CAR_DEALER" ],
+  "peopleCount" : 8,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 275.0, 20.0 ]
+  }
+}, {
+  "name" : "Inner-1 0:2-2",
+  "tags" : [ "CAR_REPAIR" ],
+  "peopleCount" : 38,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 275.0, 40.0 ]
+  }
+}, {
+  "name" : "Inner-1 0:2-3",
+  "tags" : [ "BOOK_STORE" ],
+  "peopleCount" : 11,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 275.0, 60.0 ]
+  }
+}, {
+  "name" : "Tree 0:2-1",
+  "tags" : [ "PARK", "LAUNDRY" ],
+  "peopleCount" : 19,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 225.0, 20.0 ]
+  }
+}, {
+  "name" : "Tree 0:2-2",
+  "tags" : [ "TRAIN_STATION", "BUS_STATION" ],
+  "peopleCount" : 7,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 225.0, 40.0 ]
+  }
+}, {
+  "name" : "Tree 0:2-3",
+  "tags" : [ "BAKERY", "STORAGE" ],
+  "peopleCount" : 3,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 225.0, 60.0 ]
+  }
+}, {
+  "name" : "Street 0:3-v",
+  "tags" : [ "LAWYER", "LAUNDRY", "MEAL_TAKEAWAY", "CAMPGROUND" ],
+  "peopleCount" : 25,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 390.0, 0.0 ], [ 390.0, 90.0 ] ]
+  }
+}, {
+  "name" : "Street 0:3-h",
+  "tags" : [ "LAUNDRY", "GYM" ],
+  "peopleCount" : 6,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 300.0, 90.0 ], [ 390.0, 90.0 ] ]
+  }
+}, {
+  "name" : "House 0:3",
+  "tags" : [ "JEWELRY_STORE", "SCHOOL", "PLUMBER" ],
+  "peopleCount" : 28,
+  "geometry" : {
+    "type" : "Polygon",
+    "coordinates" : [ [ [ 310.0, 10.0 ], [ 310.0, 70.0 ], [ 360.0, 70.0 ], [ 360.0, 10.0 ], [ 310.0, 10.0 ] ] ]
+  }
+}, {
+  "name" : "Inner-1 0:3-1",
+  "tags" : [ "AMUSEMENT_PARK", "CEMETERY", "SCHOOL" ],
+  "peopleCount" : 37,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 350.0, 20.0 ]
+  }
+}, {
+  "name" : "Inner-1 0:3-2",
+  "tags" : [ "LAUNDRY", "RESTAURANT", "HINDU_TEMPLE" ],
+  "peopleCount" : 20,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 350.0, 40.0 ]
+  }
+}, {
+  "name" : "Inner-1 0:3-3",
+  "tags" : [ "MOVIE_RENTAL" ],
+  "peopleCount" : 23,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 350.0, 60.0 ]
+  }
+}, {
+  "name" : "Inner-2 0:3-1",
+  "tags" : [ "HAIR_CARE" ],
+  "peopleCount" : 10,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 325.0, 20.0 ]
+  }
+}, {
+  "name" : "Inner-2 0:3-2",
+  "tags" : [ "PARKING" ],
+  "peopleCount" : 1,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 325.0, 40.0 ]
+  }
+}, {
+  "name" : "Inner-2 0:3-3",
+  "tags" : [ "SCHOOL", "FURNITURE_STORE", "LAUNDRY", "DEPARTMENT_STORE" ],
+  "peopleCount" : 9,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 325.0, 60.0 ]
+  }
+}, {
+  "name" : "Tree 0:3-1",
+  "tags" : [ "PARKING", "FUNERAL_HOME" ],
+  "peopleCount" : 4,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 375.0, 20.0 ]
+  }
+}, {
+  "name" : "Tree 0:3-2",
+  "tags" : [ "UNIVERSITY" ],
+  "peopleCount" : 18,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 375.0, 40.0 ]
+  }
+}, {
+  "name" : "Tree 0:3-3",
+  "tags" : [ "POST_OFFICE", "SHOPPING_MALL", "JEWELRY_STORE" ],
+  "peopleCount" : 39,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 375.0, 60.0 ]
+  }
+}, {
+  "name" : "Street 1:0-v",
+  "tags" : [ "HAIR_CARE", "ART_GALLERY", "STADIUM", "CAR_REPAIR" ],
+  "peopleCount" : 24,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 10.0, 110.0 ], [ 10.0, 200.0 ] ]
+  }
+}, {
+  "name" : "Street 1:0-h",
+  "tags" : [ "LOCKSMITH", "ACCOUNTING", "GROCERY_OR_SUPERMARKET", "STORAGE" ],
+  "peopleCount" : 7,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 10.0, 110.0 ], [ 100.0, 110.0 ] ]
+  }
+}, {
+  "name" : "House 1:0",
+  "tags" : [ "BAR" ],
+  "peopleCount" : 57,
+  "geometry" : {
+    "type" : "Polygon",
+    "coordinates" : [ [ [ 40.0, 130.0 ], [ 40.0, 190.0 ], [ 90.0, 190.0 ], [ 90.0, 130.0 ], [ 40.0, 130.0 ] ] ]
+  }
+}, {
+  "name" : "Inner-1 1:0-1",
+  "tags" : [ "BOWLING_ALLEY", "BEAUTY_SALON", "DOCTOR", "ZOO" ],
+  "peopleCount" : 17,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 50.0, 140.0 ]
+  }
+}, {
+  "name" : "Inner-1 1:0-2",
+  "tags" : [ "AMUSEMENT_PARK", "CONVENIENCE_STORE" ],
+  "peopleCount" : 0,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 50.0, 160.0 ]
+  }
+}, {
+  "name" : "Inner-1 1:0-3",
+  "tags" : [ "FIRE_STATION", "JEWELRY_STORE", "TAXI_STAND", "UNIVERSITY" ],
+  "peopleCount" : 1,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 50.0, 180.0 ]
+  }
+}, {
+  "name" : "Inner-2 1:0-1",
+  "tags" : [ "STORE", "REAL_ESTATE_AGENCY", "DENTIST" ],
+  "peopleCount" : 22,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 75.0, 140.0 ]
+  }
+}, {
+  "name" : "Inner-2 1:0-2",
+  "tags" : [ "STORE" ],
+  "peopleCount" : 24,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 75.0, 160.0 ]
+  }
+}, {
+  "name" : "Inner-2 1:0-3",
+  "tags" : [ "SUBWAY_STATION", "SHOPPING_MALL", "CAR_REPAIR", "STORE" ],
+  "peopleCount" : 8,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 75.0, 180.0 ]
+  }
+}, {
+  "name" : "Tree 1:0-1",
+  "tags" : [ "STORAGE" ],
+  "peopleCount" : 37,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 25.0, 140.0 ]
+  }
+}, {
+  "name" : "Tree 1:0-2",
+  "tags" : [ "ZOO", "MOVIE_RENTAL" ],
+  "peopleCount" : 34,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 25.0, 160.0 ]
+  }
+}, {
+  "name" : "Tree 1:0-3",
+  "tags" : [ "SUPERMARKET", "AQUARIUM", "LAWYER", "TAXI_STAND" ],
+  "peopleCount" : 8,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 25.0, 180.0 ]
+  }
+}, {
+  "name" : "Street 1:1-v",
+  "tags" : [ "ELECTRONICS_STORE", "HINDU_TEMPLE" ],
+  "peopleCount" : 23,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 190.0, 110.0 ], [ 190.0, 200.0 ] ]
+  }
+}, {
+  "name" : "Street 1:1-h",
+  "tags" : [ "POST_OFFICE", "STADIUM", "TAXI_STAND", "HOME_GOODS_STORE" ],
+  "peopleCount" : 10,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 100.0, 110.0 ], [ 190.0, 110.0 ] ]
+  }
+}, {
+  "name" : "House 1:1",
+  "tags" : [ "JEWELRY_STORE", "FUNERAL_HOME", "AIRPORT", "PRIMARY_SCHOOL" ],
+  "peopleCount" : 18,
+  "geometry" : {
+    "type" : "Polygon",
+    "coordinates" : [ [ [ 110.0, 130.0 ], [ 110.0, 190.0 ], [ 160.0, 190.0 ], [ 160.0, 130.0 ], [ 110.0, 130.0 ] ] ]
+  }
+}, {
+  "name" : "Inner-1 1:1-1",
+  "tags" : [ "DEPARTMENT_STORE" ],
+  "peopleCount" : 9,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 150.0, 140.0 ]
+  }
+}, {
+  "name" : "Inner-1 1:1-2",
+  "tags" : [ "CAR_WASH", "ELECTRONICS_STORE", "ZOO" ],
+  "peopleCount" : 23,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 150.0, 160.0 ]
+  }
+}, {
+  "name" : "Inner-1 1:1-3",
+  "tags" : [ "REAL_ESTATE_AGENCY", "LIBRARY", "SECONDARY_SCHOOL" ],
+  "peopleCount" : 29,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 150.0, 180.0 ]
+  }
+}, {
+  "name" : "Inner-2 1:1-1",
+  "tags" : [ "FURNITURE_STORE", "EMBASSY", "MEAL_TAKEAWAY" ],
+  "peopleCount" : 30,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 125.0, 140.0 ]
+  }
+}, {
+  "name" : "Inner-2 1:1-2",
+  "tags" : [ "DENTIST", "MOVIE_THEATER" ],
+  "peopleCount" : 31,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 125.0, 160.0 ]
+  }
+}, {
+  "name" : "Inner-2 1:1-3",
+  "tags" : [ "STORAGE" ],
+  "peopleCount" : 18,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 125.0, 180.0 ]
+  }
+}, {
+  "name" : "Tree 1:1-1",
+  "tags" : [ "CLOTHING_STORE", "POST_OFFICE", "TRAVEL_AGENCY" ],
+  "peopleCount" : 28,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 175.0, 140.0 ]
+  }
+}, {
+  "name" : "Tree 1:1-2",
+  "tags" : [ "ELECTRONICS_STORE" ],
+  "peopleCount" : 18,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 175.0, 160.0 ]
+  }
+}, {
+  "name" : "Tree 1:1-3",
+  "tags" : [ "SYNAGOGUE", "MOSQUE", "DOCTOR" ],
+  "peopleCount" : 12,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 175.0, 180.0 ]
+  }
+}, {
+  "name" : "Street 1:2-v",
+  "tags" : [ "UNIVERSITY" ],
+  "peopleCount" : 27,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 210.0, 110.0 ], [ 210.0, 200.0 ] ]
+  }
+}, {
+  "name" : "Street 1:2-h",
+  "tags" : [ "LIBRARY", "EMBASSY", "AMUSEMENT_PARK" ],
+  "peopleCount" : 15,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 210.0, 110.0 ], [ 300.0, 110.0 ] ]
+  }
+}, {
+  "name" : "House 1:2",
+  "tags" : [ "FIRE_STATION", "GROCERY_OR_SUPERMARKET", "LAUNDRY" ],
+  "peopleCount" : 41,
+  "geometry" : {
+    "type" : "Polygon",
+    "coordinates" : [ [ [ 240.0, 130.0 ], [ 240.0, 190.0 ], [ 290.0, 190.0 ], [ 290.0, 130.0 ], [ 240.0, 130.0 ] ] ]
+  }
+}, {
+  "name" : "Inner-1 1:2-1",
+  "tags" : [ "ZOO", "LIQUOR_STORE" ],
+  "peopleCount" : 28,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 250.0, 140.0 ]
+  }
+}, {
+  "name" : "Inner-1 1:2-2",
+  "tags" : [ "DEPARTMENT_STORE", "VETERINARY_CARE", "POLICE" ],
+  "peopleCount" : 18,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 250.0, 160.0 ]
+  }
+}, {
+  "name" : "Inner-1 1:2-3",
+  "tags" : [ "BICYCLE_STORE" ],
+  "peopleCount" : 23,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 250.0, 180.0 ]
+  }
+}, {
+  "name" : "Inner-2 1:2-1",
+  "tags" : [ "HOME_GOODS_STORE", "LAWYER", "LOCKSMITH" ],
+  "peopleCount" : 37,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 275.0, 140.0 ]
+  }
+}, {
+  "name" : "Inner-2 1:2-2",
+  "tags" : [ "NIGHT_CLUB" ],
+  "peopleCount" : 38,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 275.0, 160.0 ]
+  }
+}, {
+  "name" : "Inner-2 1:2-3",
+  "tags" : [ "SYNAGOGUE" ],
+  "peopleCount" : 35,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 275.0, 180.0 ]
+  }
+}, {
+  "name" : "Tree 1:2-1",
+  "tags" : [ "ELECTRICIAN", "FUNERAL_HOME", "RESTAURANT" ],
+  "peopleCount" : 8,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 225.0, 140.0 ]
+  }
+}, {
+  "name" : "Tree 1:2-2",
+  "tags" : [ "CAR_DEALER", "STADIUM", "SPA" ],
+  "peopleCount" : 15,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 225.0, 160.0 ]
+  }
+}, {
+  "name" : "Tree 1:2-3",
+  "tags" : [ "LAUNDRY", "ELECTRICIAN" ],
+  "peopleCount" : 19,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 225.0, 180.0 ]
+  }
+}, {
+  "name" : "Street 1:3-v",
+  "tags" : [ "HOME_GOODS_STORE", "CAFE", "COURTHOUSE" ],
+  "peopleCount" : 11,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 390.0, 110.0 ], [ 390.0, 200.0 ] ]
+  }
+}, {
+  "name" : "Street 1:3-h",
+  "tags" : [ "DOCTOR", "SHOE_STORE" ],
+  "peopleCount" : 9,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 300.0, 110.0 ], [ 390.0, 110.0 ] ]
+  }
+}, {
+  "name" : "House 1:3",
+  "tags" : [ "PLUMBER", "STORAGE" ],
+  "peopleCount" : 69,
+  "geometry" : {
+    "type" : "Polygon",
+    "coordinates" : [ [ [ 310.0, 130.0 ], [ 310.0, 190.0 ], [ 360.0, 190.0 ], [ 360.0, 130.0 ], [ 310.0, 130.0 ] ] ]
+  }
+}, {
+  "name" : "Inner-1 1:3-1",
+  "tags" : [ "MOSQUE", "DENTIST", "DOCTOR" ],
+  "peopleCount" : 20,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 350.0, 140.0 ]
+  }
+}, {
+  "name" : "Inner-1 1:3-2",
+  "tags" : [ "DENTIST", "STORAGE", "MOSQUE", "CITY_HALL" ],
+  "peopleCount" : 14,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 350.0, 160.0 ]
+  }
+}, {
+  "name" : "Inner-1 1:3-3",
+  "tags" : [ "CONVENIENCE_STORE", "FURNITURE_STORE", "CASINO" ],
+  "peopleCount" : 10,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 350.0, 180.0 ]
+  }
+}, {
+  "name" : "Inner-2 1:3-1",
+  "tags" : [ "CHURCH", "BAR", "CITY_HALL" ],
+  "peopleCount" : 6,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 325.0, 140.0 ]
+  }
+}, {
+  "name" : "Inner-2 1:3-2",
+  "tags" : [ "FIRE_STATION" ],
+  "peopleCount" : 2,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 325.0, 160.0 ]
+  }
+}, {
+  "name" : "Inner-2 1:3-3",
+  "tags" : [ "CAR_RENTAL", "AQUARIUM", "INSURANCE_AGENCY", "TAXI_STAND" ],
+  "peopleCount" : 20,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 325.0, 180.0 ]
+  }
+}, {
+  "name" : "Tree 1:3-1",
+  "tags" : [ "MOVIE_RENTAL", "PRIMARY_SCHOOL" ],
+  "peopleCount" : 30,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 375.0, 140.0 ]
+  }
+}, {
+  "name" : "Tree 1:3-2",
+  "tags" : [ "STADIUM" ],
+  "peopleCount" : 12,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 375.0, 160.0 ]
+  }
+}, {
+  "name" : "Tree 1:3-3",
+  "tags" : [ "ELECTRONICS_STORE", "BOOK_STORE", "FIRE_STATION" ],
+  "peopleCount" : 3,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 375.0, 180.0 ]
+  }
+}, {
+  "name" : "Street 2:0-v",
+  "tags" : [ "VETERINARY_CARE", "BICYCLE_STORE", "REAL_ESTATE_AGENCY" ],
+  "peopleCount" : 10,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 10.0, 200.0 ], [ 10.0, 290.0 ] ]
+  }
+}, {
+  "name" : "Street 2:0-h",
+  "tags" : [ "STORAGE", "MEAL_DELIVERY" ],
+  "peopleCount" : 29,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 10.0, 290.0 ], [ 100.0, 290.0 ] ]
+  }
+}, {
+  "name" : "House 2:0",
+  "tags" : [ "POLICE" ],
+  "peopleCount" : 38,
+  "geometry" : {
+    "type" : "Polygon",
+    "coordinates" : [ [ [ 40.0, 210.0 ], [ 40.0, 270.0 ], [ 90.0, 270.0 ], [ 90.0, 210.0 ], [ 40.0, 210.0 ] ] ]
+  }
+}, {
+  "name" : "Inner-1 2:0-1",
+  "tags" : [ "FURNITURE_STORE", "CAR_RENTAL", "PARK", "HAIR_CARE" ],
+  "peopleCount" : 35,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 50.0, 220.0 ]
+  }
+}, {
+  "name" : "Inner-1 2:0-2",
+  "tags" : [ "DENTIST", "SUBWAY_STATION" ],
+  "peopleCount" : 30,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 50.0, 240.0 ]
+  }
+}, {
+  "name" : "Inner-1 2:0-3",
+  "tags" : [ "EMBASSY" ],
+  "peopleCount" : 24,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 50.0, 260.0 ]
+  }
+}, {
+  "name" : "Inner-1 2:0-1",
+  "tags" : [ "JEWELRY_STORE", "CAR_RENTAL" ],
+  "peopleCount" : 32,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 75.0, 220.0 ]
+  }
+}, {
+  "name" : "Inner-1 2:0-2",
+  "tags" : [ "CONVENIENCE_STORE", "SHOE_STORE", "STORAGE", "LOCKSMITH" ],
+  "peopleCount" : 13,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 75.0, 240.0 ]
+  }
+}, {
+  "name" : "Inner-1 2:0-3",
+  "tags" : [ "LIBRARY", "TRAVEL_AGENCY", "CAMPGROUND", "ATM" ],
+  "peopleCount" : 28,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 75.0, 260.0 ]
+  }
+}, {
+  "name" : "Tree 2:0-1",
+  "tags" : [ "PET_STORE", "CLOTHING_STORE", "ELECTRONICS_STORE", "AQUARIUM" ],
+  "peopleCount" : 36,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 25.0, 220.0 ]
+  }
+}, {
+  "name" : "Tree 2:0-2",
+  "tags" : [ "TRAVEL_AGENCY", "CITY_HALL", "SCHOOL", "ELECTRICIAN" ],
+  "peopleCount" : 8,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 25.0, 240.0 ]
+  }
+}, {
+  "name" : "Tree 2:0-3",
+  "tags" : [ "POST_OFFICE", "CAR_REPAIR" ],
+  "peopleCount" : 35,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 25.0, 260.0 ]
+  }
+}, {
+  "name" : "Street 2:1-v",
+  "tags" : [ "TRAIN_STATION", "COURTHOUSE", "ELECTRICIAN" ],
+  "peopleCount" : 14,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 190.0, 200.0 ], [ 190.0, 290.0 ] ]
+  }
+}, {
+  "name" : "Street 2:1-h",
+  "tags" : [ "COURTHOUSE" ],
+  "peopleCount" : 9,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 100.0, 290.0 ], [ 190.0, 290.0 ] ]
+  }
+}, {
+  "name" : "House 2:1",
+  "tags" : [ "CAR_REPAIR", "PHARMACY", "LOCKSMITH" ],
+  "peopleCount" : 14,
+  "geometry" : {
+    "type" : "Polygon",
+    "coordinates" : [ [ [ 110.0, 210.0 ], [ 110.0, 270.0 ], [ 160.0, 270.0 ], [ 160.0, 210.0 ], [ 110.0, 210.0 ] ] ]
+  }
+}, {
+  "name" : "Inner-1 2:1-1",
+  "tags" : [ "BICYCLE_STORE", "CEMETERY", "CITY_HALL" ],
+  "peopleCount" : 29,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 150.0, 220.0 ]
+  }
+}, {
+  "name" : "Inner-1 2:1-2",
+  "tags" : [ "GAS_STATION", "SHOE_STORE", "PRIMARY_SCHOOL" ],
+  "peopleCount" : 10,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 150.0, 240.0 ]
+  }
+}, {
+  "name" : "Inner-1 2:1-3",
+  "tags" : [ "CAFE", "ACCOUNTING" ],
+  "peopleCount" : 34,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 150.0, 260.0 ]
+  }
+}, {
+  "name" : "Inner-2 2:1-1",
+  "tags" : [ "CAR_REPAIR", "LAWYER", "PLUMBER" ],
+  "peopleCount" : 33,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 125.0, 220.0 ]
+  }
+}, {
+  "name" : "Inner-2 2:1-2",
+  "tags" : [ "STORE", "NIGHT_CLUB", "TRAIN_STATION", "RESTAURANT" ],
+  "peopleCount" : 5,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 125.0, 240.0 ]
+  }
+}, {
+  "name" : "Inner-2 2:1-3",
+  "tags" : [ "JEWELRY_STORE" ],
+  "peopleCount" : 16,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 125.0, 260.0 ]
+  }
+}, {
+  "name" : "Tree 2:1-1",
+  "tags" : [ "EMBASSY", "HARDWARE_STORE" ],
+  "peopleCount" : 22,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 175.0, 220.0 ]
+  }
+}, {
+  "name" : "Tree 2:1-2",
+  "tags" : [ "HOME_GOODS_STORE" ],
+  "peopleCount" : 24,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 175.0, 240.0 ]
+  }
+}, {
+  "name" : "Tree 2:1-3",
+  "tags" : [ "ATM" ],
+  "peopleCount" : 20,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 175.0, 260.0 ]
+  }
+}, {
+  "name" : "Street 2:2-v",
+  "tags" : [ "FUNERAL_HOME", "MOVIE_THEATER" ],
+  "peopleCount" : 2,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 210.0, 200.0 ], [ 210.0, 290.0 ] ]
+  }
+}, {
+  "name" : "Street 2:2-h",
+  "tags" : [ "SPA", "UNIVERSITY", "AQUARIUM" ],
+  "peopleCount" : 19,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 210.0, 290.0 ], [ 300.0, 290.0 ] ]
+  }
+}, {
+  "name" : "House 2:2",
+  "tags" : [ "PAINTER", "CAFE", "MEAL_DELIVERY", "GYM" ],
+  "peopleCount" : 25,
+  "geometry" : {
+    "type" : "Polygon",
+    "coordinates" : [ [ [ 240.0, 210.0 ], [ 240.0, 270.0 ], [ 290.0, 270.0 ], [ 290.0, 210.0 ], [ 240.0, 210.0 ] ] ]
+  }
+}, {
+  "name" : "Inner-1 2:2-1",
+  "tags" : [ "INSURANCE_AGENCY", "MEAL_TAKEAWAY" ],
+  "peopleCount" : 3,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 250.0, 220.0 ]
+  }
+}, {
+  "name" : "Inner-1 2:2-2",
+  "tags" : [ "LIBRARY", "SUPERMARKET", "SPA", "SCHOOL" ],
+  "peopleCount" : 11,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 250.0, 240.0 ]
+  }
+}, {
+  "name" : "Inner-1 2:2-3",
+  "tags" : [ "CAFE" ],
+  "peopleCount" : 21,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 250.0, 260.0 ]
+  }
+}, {
+  "name" : "Inner-1 2:2-1",
+  "tags" : [ "LAUNDRY", "PHARMACY", "LIGHT_RAIL_STATION" ],
+  "peopleCount" : 16,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 275.0, 220.0 ]
+  }
+}, {
+  "name" : "Inner-1 2:2-2",
+  "tags" : [ "PLUMBER", "INSURANCE_AGENCY", "MOVIE_THEATER", "SYNAGOGUE" ],
+  "peopleCount" : 0,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 275.0, 240.0 ]
+  }
+}, {
+  "name" : "Inner-1 2:2-3",
+  "tags" : [ "BANK", "HINDU_TEMPLE", "PARKING", "PLUMBER" ],
+  "peopleCount" : 16,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 275.0, 260.0 ]
+  }
+}, {
+  "name" : "Tree 2:2-1",
+  "tags" : [ "GYM", "ACCOUNTING", "POLICE", "CEMETERY" ],
+  "peopleCount" : 3,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 225.0, 220.0 ]
+  }
+}, {
+  "name" : "Tree 2:2-2",
+  "tags" : [ "PARKING", "ELECTRONICS_STORE", "TRAVEL_AGENCY", "AMUSEMENT_PARK" ],
+  "peopleCount" : 28,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 225.0, 240.0 ]
+  }
+}, {
+  "name" : "Tree 2:2-3",
+  "tags" : [ "BEAUTY_SALON", "COURTHOUSE", "BAKERY" ],
+  "peopleCount" : 34,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 225.0, 260.0 ]
+  }
+}, {
+  "name" : "Street 2:3-v",
+  "tags" : [ "STORAGE", "CAR_REPAIR" ],
+  "peopleCount" : 1,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 390.0, 200.0 ], [ 390.0, 290.0 ] ]
+  }
+}, {
+  "name" : "Street 2:3-h",
+  "tags" : [ "CAR_DEALER", "HOSPITAL" ],
+  "peopleCount" : 4,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 300.0, 290.0 ], [ 390.0, 290.0 ] ]
+  }
+}, {
+  "name" : "House 2:3",
+  "tags" : [ "PLUMBER" ],
+  "peopleCount" : 0,
+  "geometry" : {
+    "type" : "Polygon",
+    "coordinates" : [ [ [ 310.0, 210.0 ], [ 310.0, 270.0 ], [ 360.0, 270.0 ], [ 360.0, 210.0 ], [ 310.0, 210.0 ] ] ]
+  }
+}, {
+  "name" : "Inner-1 2:3-1",
+  "tags" : [ "TRAIN_STATION", "PET_STORE", "PLUMBER" ],
+  "peopleCount" : 20,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 350.0, 220.0 ]
+  }
+}, {
+  "name" : "Inner-1 2:3-2",
+  "tags" : [ "PET_STORE" ],
+  "peopleCount" : 16,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 350.0, 240.0 ]
+  }
+}, {
+  "name" : "Inner-1 2:3-3",
+  "tags" : [ "LAUNDRY" ],
+  "peopleCount" : 26,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 350.0, 260.0 ]
+  }
+}, {
+  "name" : "Inner-2 2:3-1",
+  "tags" : [ "LIQUOR_STORE", "FUNERAL_HOME", "AQUARIUM" ],
+  "peopleCount" : 37,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 325.0, 220.0 ]
+  }
+}, {
+  "name" : "Inner-2 2:3-2",
+  "tags" : [ "AMUSEMENT_PARK", "GYM", "AQUARIUM", "LAUNDRY" ],
+  "peopleCount" : 32,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 325.0, 240.0 ]
+  }
+}, {
+  "name" : "Inner-2 2:3-3",
+  "tags" : [ "NIGHT_CLUB", "DOCTOR" ],
+  "peopleCount" : 8,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 325.0, 260.0 ]
+  }
+}, {
+  "name" : "Tree 2:3-1",
+  "tags" : [ "REAL_ESTATE_AGENCY", "LIGHT_RAIL_STATION", "HAIR_CARE" ],
+  "peopleCount" : 27,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 375.0, 220.0 ]
+  }
+}, {
+  "name" : "Tree 2:3-2",
+  "tags" : [ "FUNERAL_HOME" ],
+  "peopleCount" : 36,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 375.0, 240.0 ]
+  }
+}, {
+  "name" : "Tree 2:3-3",
+  "tags" : [ "CASINO", "VETERINARY_CARE" ],
+  "peopleCount" : 28,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 375.0, 260.0 ]
+  }
+}, {
+  "name" : "Street 3:0-v",
+  "tags" : [ "PARKING", "HAIR_CARE", "STORE", "CLOTHING_STORE" ],
+  "peopleCount" : 14,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 10.0, 310.0 ], [ 10.0, 400.0 ] ]
+  }
+}, {
+  "name" : "Street 3:0-h",
+  "tags" : [ "NIGHT_CLUB" ],
+  "peopleCount" : 3,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 10.0, 310.0 ], [ 100.0, 310.0 ] ]
+  }
+}, {
+  "name" : "House 3:0",
+  "tags" : [ "REAL_ESTATE_AGENCY", "LOCKSMITH", "BOWLING_ALLEY" ],
+  "peopleCount" : 53,
+  "geometry" : {
+    "type" : "Polygon",
+    "coordinates" : [ [ [ 40.0, 330.0 ], [ 40.0, 390.0 ], [ 90.0, 390.0 ], [ 90.0, 330.0 ], [ 40.0, 330.0 ] ] ]
+  }
+}, {
+  "name" : "Inner-1 3:0-1",
+  "tags" : [ "BAR", "ART_GALLERY" ],
+  "peopleCount" : 0,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 50.0, 340.0 ]
+  }
+}, {
+  "name" : "Inner-1 3:0-2",
+  "tags" : [ "JEWELRY_STORE" ],
+  "peopleCount" : 16,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 50.0, 360.0 ]
+  }
+}, {
+  "name" : "Inner-1 3:0-3",
+  "tags" : [ "AQUARIUM", "LOCAL_GOVERNMENT_OFFICE" ],
+  "peopleCount" : 39,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 50.0, 380.0 ]
+  }
+}, {
+  "name" : "Inner-2 3:0-1",
+  "tags" : [ "MOVIE_THEATER" ],
+  "peopleCount" : 0,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 75.0, 340.0 ]
+  }
+}, {
+  "name" : "Inner-2 3:0-2",
+  "tags" : [ "LAUNDRY", "RESTAURANT", "AIRPORT" ],
+  "peopleCount" : 4,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 75.0, 360.0 ]
+  }
+}, {
+  "name" : "Inner-2 3:0-3",
+  "tags" : [ "TRAVEL_AGENCY", "AMUSEMENT_PARK", "CASINO" ],
+  "peopleCount" : 8,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 75.0, 380.0 ]
+  }
+}, {
+  "name" : "Tree 3:0-1",
+  "tags" : [ "SUPERMARKET" ],
+  "peopleCount" : 24,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 25.0, 340.0 ]
+  }
+}, {
+  "name" : "Tree 3:0-2",
+  "tags" : [ "SHOPPING_MALL" ],
+  "peopleCount" : 26,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 25.0, 360.0 ]
+  }
+}, {
+  "name" : "Tree 3:0-3",
+  "tags" : [ "SPA" ],
+  "peopleCount" : 28,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 25.0, 380.0 ]
+  }
+}, {
+  "name" : "Street 3:1-v",
+  "tags" : [ "AQUARIUM", "LIGHT_RAIL_STATION", "MOVIE_RENTAL" ],
+  "peopleCount" : 4,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 190.0, 310.0 ], [ 190.0, 400.0 ] ]
+  }
+}, {
+  "name" : "Street 3:1-h",
+  "tags" : [ "COURTHOUSE" ],
+  "peopleCount" : 17,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 100.0, 310.0 ], [ 190.0, 310.0 ] ]
+  }
+}, {
+  "name" : "House 3:1",
+  "tags" : [ "CAMPGROUND", "SECONDARY_SCHOOL", "POST_OFFICE", "DENTIST" ],
+  "peopleCount" : 35,
+  "geometry" : {
+    "type" : "Polygon",
+    "coordinates" : [ [ [ 110.0, 330.0 ], [ 110.0, 390.0 ], [ 160.0, 390.0 ], [ 160.0, 330.0 ], [ 110.0, 330.0 ] ] ]
+  }
+}, {
+  "name" : "Inner-1 3:1-1",
+  "tags" : [ "AQUARIUM", "LAUNDRY", "PRIMARY_SCHOOL" ],
+  "peopleCount" : 22,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 150.0, 340.0 ]
+  }
+}, {
+  "name" : "Inner-1 3:1-2",
+  "tags" : [ "PRIMARY_SCHOOL", "MEAL_TAKEAWAY", "CAMPGROUND" ],
+  "peopleCount" : 34,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 150.0, 360.0 ]
+  }
+}, {
+  "name" : "Inner-1 3:1-3",
+  "tags" : [ "SHOPPING_MALL" ],
+  "peopleCount" : 33,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 150.0, 380.0 ]
+  }
+}, {
+  "name" : "Inner-2 3:1-1",
+  "tags" : [ "BEAUTY_SALON", "PARK" ],
+  "peopleCount" : 6,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 125.0, 340.0 ]
+  }
+}, {
+  "name" : "Inner-2 3:1-2",
+  "tags" : [ "CAMPGROUND", "CAFE" ],
+  "peopleCount" : 24,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 125.0, 360.0 ]
+  }
+}, {
+  "name" : "Inner-2 3:1-3",
+  "tags" : [ "CAR_DEALER", "LIQUOR_STORE", "CONVENIENCE_STORE" ],
+  "peopleCount" : 32,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 125.0, 380.0 ]
+  }
+}, {
+  "name" : "Tree 3:1-1",
+  "tags" : [ "CEMETERY", "LAWYER", "MOVIE_THEATER", "CAFE" ],
+  "peopleCount" : 21,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 175.0, 340.0 ]
+  }
+}, {
+  "name" : "Tree 3:1-2",
+  "tags" : [ "GYM" ],
+  "peopleCount" : 15,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 175.0, 360.0 ]
+  }
+}, {
+  "name" : "Tree 3:1-3",
+  "tags" : [ "AIRPORT" ],
+  "peopleCount" : 14,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 175.0, 380.0 ]
+  }
+}, {
+  "name" : "Street 3:2-v",
+  "tags" : [ "LIGHT_RAIL_STATION", "HARDWARE_STORE", "SHOE_STORE" ],
+  "peopleCount" : 29,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 210.0, 310.0 ], [ 210.0, 400.0 ] ]
+  }
+}, {
+  "name" : "Street 3:2-h",
+  "tags" : [ "DENTIST" ],
+  "peopleCount" : 4,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 210.0, 310.0 ], [ 300.0, 310.0 ] ]
+  }
+}, {
+  "name" : "House 3:2",
+  "tags" : [ "LIBRARY", "MEAL_DELIVERY" ],
+  "peopleCount" : 31,
+  "geometry" : {
+    "type" : "Polygon",
+    "coordinates" : [ [ [ 240.0, 330.0 ], [ 240.0, 390.0 ], [ 290.0, 390.0 ], [ 290.0, 330.0 ], [ 240.0, 330.0 ] ] ]
+  }
+}, {
+  "name" : "Inner-1 3:2-1",
+  "tags" : [ "BICYCLE_STORE" ],
+  "peopleCount" : 10,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 250.0, 340.0 ]
+  }
+}, {
+  "name" : "Inner-1 3:2-2",
+  "tags" : [ "TRAVEL_AGENCY", "CAR_DEALER", "HINDU_TEMPLE" ],
+  "peopleCount" : 13,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 250.0, 360.0 ]
+  }
+}, {
+  "name" : "Inner-1 3:2-3",
+  "tags" : [ "CAR_RENTAL", "SHOPPING_MALL", "CEMETERY" ],
+  "peopleCount" : 10,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 250.0, 380.0 ]
+  }
+}, {
+  "name" : "Inner-2 3:2-1",
+  "tags" : [ "VETERINARY_CARE", "STORE" ],
+  "peopleCount" : 38,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 275.0, 340.0 ]
+  }
+}, {
+  "name" : "Inner-2 3:2-2",
+  "tags" : [ "BEAUTY_SALON" ],
+  "peopleCount" : 2,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 275.0, 360.0 ]
+  }
+}, {
+  "name" : "Inner-2 3:2-3",
+  "tags" : [ "LAUNDRY", "MOVIE_THEATER", "HINDU_TEMPLE" ],
+  "peopleCount" : 18,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 275.0, 380.0 ]
+  }
+}, {
+  "name" : "Tree 3:2-1",
+  "tags" : [ "MEAL_TAKEAWAY" ],
+  "peopleCount" : 2,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 225.0, 340.0 ]
+  }
+}, {
+  "name" : "Tree 3:2-2",
+  "tags" : [ "RESTAURANT", "BAKERY" ],
+  "peopleCount" : 30,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 225.0, 360.0 ]
+  }
+}, {
+  "name" : "Tree 3:2-3",
+  "tags" : [ "PRIMARY_SCHOOL", "CONVENIENCE_STORE", "CHURCH", "BICYCLE_STORE" ],
+  "peopleCount" : 23,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 225.0, 380.0 ]
+  }
+}, {
+  "name" : "Street 3:3-v",
+  "tags" : [ "GAS_STATION" ],
+  "peopleCount" : 4,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 390.0, 310.0 ], [ 390.0, 400.0 ] ]
+  }
+}, {
+  "name" : "Street 3:3-h",
+  "tags" : [ "STADIUM", "CAFE", "LOCKSMITH" ],
+  "peopleCount" : 8,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 300.0, 310.0 ], [ 390.0, 310.0 ] ]
+  }
+}, {
+  "name" : "House 3:3",
+  "tags" : [ "LOCKSMITH", "AIRPORT", "ZOO", "CITY_HALL" ],
+  "peopleCount" : 24,
+  "geometry" : {
+    "type" : "Polygon",
+    "coordinates" : [ [ [ 310.0, 330.0 ], [ 310.0, 390.0 ], [ 360.0, 390.0 ], [ 360.0, 330.0 ], [ 310.0, 330.0 ] ] ]
+  }
+}, {
+  "name" : "Inner-1 3:3-1",
+  "tags" : [ "LOCKSMITH", "PARKING", "BOWLING_ALLEY", "BOOK_STORE" ],
+  "peopleCount" : 33,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 350.0, 340.0 ]
+  }
+}, {
+  "name" : "Inner-1 3:3-2",
+  "tags" : [ "PARKING" ],
+  "peopleCount" : 2,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 350.0, 360.0 ]
+  }
+}, {
+  "name" : "Inner-1 3:3-3",
+  "tags" : [ "AMUSEMENT_PARK", "CITY_HALL", "EMBASSY", "CEMETERY" ],
+  "peopleCount" : 13,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 350.0, 380.0 ]
+  }
+}, {
+  "name" : "Inner-2 3:3-1",
+  "tags" : [ "CONVENIENCE_STORE" ],
+  "peopleCount" : 5,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 325.0, 340.0 ]
+  }
+}, {
+  "name" : "Inner-2 3:3-2",
+  "tags" : [ "CAMPGROUND", "PRIMARY_SCHOOL", "CHURCH" ],
+  "peopleCount" : 0,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 325.0, 360.0 ]
+  }
+}, {
+  "name" : "Inner-2 3:3-3",
+  "tags" : [ "PAINTER", "JEWELRY_STORE", "TRAVEL_AGENCY" ],
+  "peopleCount" : 26,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 325.0, 380.0 ]
+  }
+}, {
+  "name" : "Tree 3:3-1",
+  "tags" : [ "PAINTER" ],
+  "peopleCount" : 19,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 375.0, 340.0 ]
+  }
+}, {
+  "name" : "Tree 3:3-2",
+  "tags" : [ "HARDWARE_STORE", "MEAL_TAKEAWAY", "SECONDARY_SCHOOL" ],
+  "peopleCount" : 20,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 375.0, 360.0 ]
+  }
+}, {
+  "name" : "Tree 3:3-3",
+  "tags" : [ "CAR_DEALER", "MOVIE_RENTAL", "BOOK_STORE" ],
+  "peopleCount" : 36,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 375.0, 380.0 ]
+  }
+}, {
+  "name" : "Street 4:0-v",
+  "tags" : [ "AMUSEMENT_PARK" ],
+  "peopleCount" : 20,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 10.0, 400.0 ], [ 10.0, 490.0 ] ]
+  }
+}, {
+  "name" : "Street 4:0-h",
+  "tags" : [ "VETERINARY_CARE", "HOME_GOODS_STORE" ],
+  "peopleCount" : 19,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 10.0, 490.0 ], [ 100.0, 490.0 ] ]
+  }
+}, {
+  "name" : "House 4:0",
+  "tags" : [ "CITY_HALL", "LAUNDRY" ],
+  "peopleCount" : 34,
+  "geometry" : {
+    "type" : "Polygon",
+    "coordinates" : [ [ [ 40.0, 410.0 ], [ 40.0, 470.0 ], [ 90.0, 470.0 ], [ 90.0, 410.0 ], [ 40.0, 410.0 ] ] ]
+  }
+}, {
+  "name" : "Inner-1 4:0-1",
+  "tags" : [ "BOOK_STORE", "BAKERY" ],
+  "peopleCount" : 25,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 50.0, 420.0 ]
+  }
+}, {
+  "name" : "Inner-1 4:0-2",
+  "tags" : [ "BOWLING_ALLEY", "SCHOOL", "CAR_DEALER" ],
+  "peopleCount" : 24,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 50.0, 440.0 ]
+  }
+}, {
+  "name" : "Inner-1 4:0-3",
+  "tags" : [ "BAKERY", "POST_OFFICE", "SUPERMARKET", "BANK" ],
+  "peopleCount" : 7,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 50.0, 460.0 ]
+  }
+}, {
+  "name" : "Inner-1 4:0-1",
+  "tags" : [ "LAWYER", "ZOO", "BICYCLE_STORE", "REAL_ESTATE_AGENCY" ],
+  "peopleCount" : 24,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 75.0, 420.0 ]
+  }
+}, {
+  "name" : "Inner-1 4:0-2",
+  "tags" : [ "SCHOOL", "SYNAGOGUE", "BUS_STATION", "STORE" ],
+  "peopleCount" : 19,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 75.0, 440.0 ]
+  }
+}, {
+  "name" : "Inner-1 4:0-3",
+  "tags" : [ "MUSEUM", "CAMPGROUND" ],
+  "peopleCount" : 16,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 75.0, 460.0 ]
+  }
+}, {
+  "name" : "Tree 4:0-1",
+  "tags" : [ "LAWYER" ],
+  "peopleCount" : 37,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 25.0, 420.0 ]
+  }
+}, {
+  "name" : "Tree 4:0-2",
+  "tags" : [ "SUBWAY_STATION", "CAR_WASH", "CLOTHING_STORE", "ACCOUNTING" ],
+  "peopleCount" : 2,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 25.0, 440.0 ]
+  }
+}, {
+  "name" : "Tree 4:0-3",
+  "tags" : [ "HARDWARE_STORE", "FIRE_STATION", "FUNERAL_HOME", "GYM" ],
+  "peopleCount" : 13,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 25.0, 460.0 ]
+  }
+}, {
+  "name" : "Street 4:1-v",
+  "tags" : [ "SUPERMARKET" ],
+  "peopleCount" : 7,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 190.0, 400.0 ], [ 190.0, 490.0 ] ]
+  }
+}, {
+  "name" : "Street 4:1-h",
+  "tags" : [ "HINDU_TEMPLE", "UNIVERSITY", "AMUSEMENT_PARK", "CAFE" ],
+  "peopleCount" : 21,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 100.0, 490.0 ], [ 190.0, 490.0 ] ]
+  }
+}, {
+  "name" : "House 4:1",
+  "tags" : [ "AQUARIUM" ],
+  "peopleCount" : 6,
+  "geometry" : {
+    "type" : "Polygon",
+    "coordinates" : [ [ [ 110.0, 410.0 ], [ 110.0, 470.0 ], [ 160.0, 470.0 ], [ 160.0, 410.0 ], [ 110.0, 410.0 ] ] ]
+  }
+}, {
+  "name" : "Inner-1 4:1-1",
+  "tags" : [ "CAR_DEALER" ],
+  "peopleCount" : 16,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 150.0, 420.0 ]
+  }
+}, {
+  "name" : "Inner-1 4:1-2",
+  "tags" : [ "GYM", "HAIR_CARE" ],
+  "peopleCount" : 37,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 150.0, 440.0 ]
+  }
+}, {
+  "name" : "Inner-1 4:1-3",
+  "tags" : [ "SUPERMARKET", "JEWELRY_STORE", "BANK", "CLOTHING_STORE" ],
+  "peopleCount" : 23,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 150.0, 460.0 ]
+  }
+}, {
+  "name" : "Inner-2 4:1-1",
+  "tags" : [ "CAMPGROUND", "BICYCLE_STORE", "CAR_DEALER", "SECONDARY_SCHOOL" ],
+  "peopleCount" : 9,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 125.0, 420.0 ]
+  }
+}, {
+  "name" : "Inner-2 4:1-2",
+  "tags" : [ "CAR_DEALER", "COURTHOUSE", "ATM" ],
+  "peopleCount" : 31,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 125.0, 440.0 ]
+  }
+}, {
+  "name" : "Inner-2 4:1-3",
+  "tags" : [ "BANK" ],
+  "peopleCount" : 31,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 125.0, 460.0 ]
+  }
+}, {
+  "name" : "Tree 4:1-1",
+  "tags" : [ "ATM" ],
+  "peopleCount" : 9,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 175.0, 420.0 ]
+  }
+}, {
+  "name" : "Tree 4:1-2",
+  "tags" : [ "HAIR_CARE", "BOOK_STORE", "HOME_GOODS_STORE" ],
+  "peopleCount" : 28,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 175.0, 440.0 ]
+  }
+}, {
+  "name" : "Tree 4:1-3",
+  "tags" : [ "CAR_DEALER", "BEAUTY_SALON" ],
+  "peopleCount" : 16,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 175.0, 460.0 ]
+  }
+}, {
+  "name" : "Street 4:2-v",
+  "tags" : [ "ZOO", "BOWLING_ALLEY", "CAR_REPAIR" ],
+  "peopleCount" : 23,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 210.0, 400.0 ], [ 210.0, 490.0 ] ]
+  }
+}, {
+  "name" : "Street 4:2-h",
+  "tags" : [ "GAS_STATION", "HOME_GOODS_STORE" ],
+  "peopleCount" : 13,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 210.0, 490.0 ], [ 300.0, 490.0 ] ]
+  }
+}, {
+  "name" : "House 4:2",
+  "tags" : [ "BEAUTY_SALON" ],
+  "peopleCount" : 18,
+  "geometry" : {
+    "type" : "Polygon",
+    "coordinates" : [ [ [ 240.0, 410.0 ], [ 240.0, 470.0 ], [ 290.0, 470.0 ], [ 290.0, 410.0 ], [ 240.0, 410.0 ] ] ]
+  }
+}, {
+  "name" : "Inner-1 4:2-1",
+  "tags" : [ "POLICE", "HOSPITAL" ],
+  "peopleCount" : 28,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 250.0, 420.0 ]
+  }
+}, {
+  "name" : "Inner-1 4:2-2",
+  "tags" : [ "MUSEUM" ],
+  "peopleCount" : 20,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 250.0, 440.0 ]
+  }
+}, {
+  "name" : "Inner-1 4:2-3",
+  "tags" : [ "SHOPPING_MALL", "TAXI_STAND" ],
+  "peopleCount" : 4,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 250.0, 460.0 ]
+  }
+}, {
+  "name" : "Inner-1 4:2-1",
+  "tags" : [ "CAR_REPAIR", "BAKERY", "STORAGE", "LAUNDRY" ],
+  "peopleCount" : 12,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 275.0, 420.0 ]
+  }
+}, {
+  "name" : "Inner-1 4:2-2",
+  "tags" : [ "CASINO", "FURNITURE_STORE", "BOOK_STORE" ],
+  "peopleCount" : 34,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 275.0, 440.0 ]
+  }
+}, {
+  "name" : "Inner-1 4:2-3",
+  "tags" : [ "FURNITURE_STORE", "SHOE_STORE", "STADIUM", "BOWLING_ALLEY" ],
+  "peopleCount" : 26,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 275.0, 460.0 ]
+  }
+}, {
+  "name" : "Tree 4:2-1",
+  "tags" : [ "FLORIST", "ZOO" ],
+  "peopleCount" : 22,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 225.0, 420.0 ]
+  }
+}, {
+  "name" : "Tree 4:2-2",
+  "tags" : [ "CHURCH", "LIQUOR_STORE", "EMBASSY", "LOCKSMITH" ],
+  "peopleCount" : 33,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 225.0, 440.0 ]
+  }
+}, {
+  "name" : "Tree 4:2-3",
+  "tags" : [ "AMUSEMENT_PARK", "HARDWARE_STORE", "BOOK_STORE" ],
+  "peopleCount" : 7,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 225.0, 460.0 ]
+  }
+}, {
+  "name" : "Street 4:3-v",
+  "tags" : [ "LOCKSMITH", "FURNITURE_STORE", "LIGHT_RAIL_STATION", "INSURANCE_AGENCY" ],
+  "peopleCount" : 17,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 390.0, 400.0 ], [ 390.0, 490.0 ] ]
+  }
+}, {
+  "name" : "Street 4:3-h",
+  "tags" : [ "ZOO", "FIRE_STATION", "LOCAL_GOVERNMENT_OFFICE", "TRANSIT_STATION" ],
+  "peopleCount" : 17,
+  "geometry" : {
+    "type" : "LineString",
+    "coordinates" : [ [ 300.0, 490.0 ], [ 390.0, 490.0 ] ]
+  }
+}, {
+  "name" : "House 4:3",
+  "tags" : [ "EMBASSY" ],
+  "peopleCount" : 35,
+  "geometry" : {
+    "type" : "Polygon",
+    "coordinates" : [ [ [ 310.0, 410.0 ], [ 310.0, 470.0 ], [ 360.0, 470.0 ], [ 360.0, 410.0 ], [ 310.0, 410.0 ] ] ]
+  }
+}, {
+  "name" : "Inner-1 4:3-1",
+  "tags" : [ "BUS_STATION", "HAIR_CARE" ],
+  "peopleCount" : 31,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 350.0, 420.0 ]
+  }
+}, {
+  "name" : "Inner-1 4:3-2",
+  "tags" : [ "GAS_STATION" ],
+  "peopleCount" : 32,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 350.0, 440.0 ]
+  }
+}, {
+  "name" : "Inner-1 4:3-3",
+  "tags" : [ "DENTIST", "SPA" ],
+  "peopleCount" : 28,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 350.0, 460.0 ]
+  }
+}, {
+  "name" : "Inner-2 4:3-1",
+  "tags" : [ "BOOK_STORE", "CAR_RENTAL" ],
+  "peopleCount" : 25,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 325.0, 420.0 ]
+  }
+}, {
+  "name" : "Inner-2 4:3-2",
+  "tags" : [ "ELECTRICIAN", "HOME_GOODS_STORE" ],
+  "peopleCount" : 6,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 325.0, 440.0 ]
+  }
+}, {
+  "name" : "Inner-2 4:3-3",
+  "tags" : [ "AIRPORT" ],
+  "peopleCount" : 31,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 325.0, 460.0 ]
+  }
+}, {
+  "name" : "Tree 4:3-1",
+  "tags" : [ "POLICE", "LIBRARY" ],
+  "peopleCount" : 39,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 375.0, 420.0 ]
+  }
+}, {
+  "name" : "Tree 4:3-2",
+  "tags" : [ "COURTHOUSE", "CLOTHING_STORE", "AIRPORT", "BOWLING_ALLEY" ],
+  "peopleCount" : 10,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 375.0, 440.0 ]
+  }
+}, {
+  "name" : "Tree 4:3-3",
+  "tags" : [ "CAFE", "PRIMARY_SCHOOL" ],
+  "peopleCount" : 26,
+  "geometry" : {
+    "type" : "Point",
+    "coordinates" : [ 375.0, 460.0 ]
+  }
+} ]

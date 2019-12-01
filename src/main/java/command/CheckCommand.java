@@ -2,8 +2,9 @@ package command;
 
 import world.CheckMap;
 import world.Request;
+import world.UserData;
 
-public class CheckCommand implements Command{
+public class CheckCommand implements Command {
 
     private Request request;
 
@@ -18,6 +19,10 @@ public class CheckCommand implements Command{
 
     @Override
     public void unexecute(CheckMap checkMap) {
-checkMap.checkout(request.getUser());
+        checkMap.checkout(request.getUser());
+    }
+
+    public Request getRequest() {
+        return request;
     }
 }

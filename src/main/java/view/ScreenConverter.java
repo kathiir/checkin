@@ -22,6 +22,7 @@ public class ScreenConverter {
         double x = (c.x - xr) * ws / wr;
         double y = (yr - c.y) * hs / hr;
         return new ScreenPoint(x, y);
+
     }
 
     public Coordinate s2r(ScreenPoint p) {
@@ -29,6 +30,8 @@ public class ScreenConverter {
         double y = yr - p.getY() * hr / hs;
         return new Coordinate(x, y);
     }
+
+
 
     public void setScreenSize(int w, int h) {
         wr = wr / ws * w;

@@ -15,21 +15,8 @@ public class Request {
         this.x = x;
         this.y = y;
         this.r = r;
-//        GeometricShapeFactory gsc = new GeometricShapeFactory();
-//        gsc.setCentre(new Coordinate(x,y));
-//        gsc.setSize(2*r);
-//        gsc.setNumPoints(32);
-//        area = gsc.createCircle();
     }
 
-//    public Request(Polygon area, UserData user) {
-//        this.area = area;
-//        this.user = user;
-//    }
-
-//    public Polygon getArea() {
-//        return area;
-//    }
 
     public UserData getUser() {
         return user;

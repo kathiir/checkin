@@ -1,34 +1,33 @@
-import com.bedatadriven.jackson.datatype.jts.JtsModule;
-import com.bedatadriven.jackson.datatype.jts.serialization.GeometryDeserializer;
 import com.fasterxml.jackson.core.JsonFactory;
-import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.*;
-import com.fasterxml.jackson.databind.jsontype.BasicPolymorphicTypeValidator;
-import com.fasterxml.jackson.databind.jsontype.PolymorphicTypeValidator;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.sun.javafx.geom.Area;
 import command.CheckCommand;
 import command.Invoker;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import comparator.MapObjectComparatorType;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.stage.FileChooser;
 import objects.*;
 import org.controlsfx.control.CheckComboBox;
 import com.vividsolutions.jts.geom.*;
+import org.controlsfx.control.CheckModel;
 import view.ResizableCanvas;
 import view.ScreenConverter;
 import view.ScreenPoint;
 import world.CheckMap;
 import world.Request;
 import world.Tags;
+import world.UserData;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -42,39 +41,52 @@ public class Controller implements Initializable, ResizableCanvas.PaintListener 
     public TextField radiusTextField;
     public TextField nameTextField;
     public CheckComboBox<Tags> tagsCheckComboBox;
+    public TextField xTextField;
+    public TextField yTextField;
+    public ComboBox<MapObjectComparatorType> comparatorSelector;
+    public TextArea objectInf;
 
     private ScreenConverter sc;
     private CheckMap checkMap;
 
     private Invoker invoker;
 
-
-    private void paint() {
-        GraphicsContext context = canvas.getGraphicsContext2D();
-        context.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
-        context.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
-    }
-
+    private MapObject selectedMapObject, checkedMapObject;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         checkMap = new CheckMap();
-        sc = new ScreenConverter(0, 0, 500, 500,
-                canvas.getWidth(), canvas.getHeight());
+        sc = new ScreenConverter(0, 500, 500, 500,
+                500, 500);
 
         canvas.setPaintListener(this);
 
         tagsCheckComboBox.getItems().setAll(Tags.values());
 
-        invoker = new Invoker(checkMap);
+        comparatorSelector.getItems().setAll(MapObjectComparatorType.values());
 
+        invoker = new Invoker(checkMap);
+        canvas.paint();
     }
 
     public void checkIn(ActionEvent actionEvent) {
-        generateStreetMap(checkMap);
+        try {
+            double r = Double.parseDouble(radiusTextField.getText());
+            double x = Double.parseDouble(xTextField.getText());
+            double y = Double.parseDouble(yTextField.getText());
 
-//        Request request = new Request(x, y, r, userData);
-//        invoker.addCommand(new CheckCommand(request)); //do command
+            UserData userData = new UserData(nameTextField.getText(),
+                    Arrays.asList(tagsCheckComboBox.getCheckModel().getCheckedItems().toArray(new Tags[0])));
+            request = new Request(x, y, r, userData);
+            invoker.doCommand(new CheckCommand(request));
+
+            checkedMapObject = checkMap.getMapObject(userData);
+
+            setObjectInf(checkedMapObject);
+
+            canvas.paint();
+        } catch (Exception ignored) {
+        }
     }
 
     private ScreenPoint last = null;
@@ -88,11 +100,9 @@ public class Controller implements Initializable, ResizableCanvas.PaintListener 
             sc.setXr(d.x);
             sc.setYr(d.y);
             last = cur;
-//            repaint(new Rectangle(getWidth(), getHeight()));
-            paint();
+            canvas.paint();
 
         }
-
     }
 
     public void getPoint(MouseEvent e) {
@@ -100,6 +110,21 @@ public class Controller implements Initializable, ResizableCanvas.PaintListener 
     }
 
     public void zoom(ScrollEvent scrollEvent) {
+        //not today
+    }
+
+    public void getSelectedObject(ContextMenuEvent contextMenuEvent) {
+        try {
+            ScreenPoint screenPoint = new ScreenPoint(contextMenuEvent.getX(), contextMenuEvent.getY());
+            selectedMapObject = checkMap.getMapObjectByCoordinate(sc.s2r(screenPoint));
+            System.out.println(selectedMapObject.getName());
+            canvas.paint();
+
+            setObjectInf(selectedMapObject);
+        } catch (NullPointerException e) {
+            selectedMapObject = null;
+            objectInf.setText("");
+        }
 
     }
 
@@ -117,13 +142,11 @@ public class Controller implements Initializable, ResizableCanvas.PaintListener 
             JsonFactory jsonFactory = new JsonFactory();
             try (BufferedReader br = new BufferedReader(new FileReader(file))) {
 
-                mapper.readValue(jsonFactory.createParser(file),
-                        MapObject.class);
-
-
-
-                paint();
-
+                MapObject[] objects = mapper.readValue(jsonFactory.createParser(br),
+                        MapObject[].class);
+                checkMap = new CheckMap(Arrays.asList(objects));
+                invoker = new Invoker(checkMap);
+                canvas.paint();
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -131,241 +154,149 @@ public class Controller implements Initializable, ResizableCanvas.PaintListener 
 
         }
 
+        canvas.paint();
     }
 
 
+    //------------------//
 
     @Override
     public void paint(GraphicsContext context) {
-        context.setFill(Color.WHITE);
+        context.setFill(Color.rgb(255, 254, 232));
         context.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
-    }
 
-
-    //------------------------//
-
-
-    private void generateStreetMap(CheckMap checkMap) {
-        GeometryFactory geometryFactory = new GeometryFactory();
-        Point point;
-        LineString lineString;
-        Polygon polygon;
-
-        Random random = new Random();
-
-        List<MapObject> objectList = new ArrayList<>();
-
-        lineString = geometryFactory.createLineString(new Coordinate[]{new Coordinate(20, 100), new Coordinate(20,  90)});
-        objectList.add(new LineObject(lineString, "Street " + 0.1 + ":" + 12 + "-v", createRandomTagList(random), random.nextInt(30)));
-
-        for (int i = 0; i < (int) canvas.getHeight() / 100; i++) {
-            for (int j = 0; j < (int) canvas.getWidth() / 100; j++) {
-
-                if (i % 2 == 0 && j % 2 == 0) {
-                    lineString = geometryFactory.createLineString(new Coordinate[]{new Coordinate(j * 100 + 10, i * 100), new Coordinate(j * 100 + 10, i * 100 + 90)});
-                    objectList.add(new LineObject(lineString, "Street " + i + ":" + j + "-v", createRandomTagList(random), random.nextInt(30)));
-
-                    lineString = geometryFactory.createLineString(new Coordinate[]{new Coordinate(j * 100 + 10, i * 100 + 90), new Coordinate(j * 100 + 100, i * 100 + 90)});
-                    objectList.add(new LineObject(lineString, "Street " + i + ":" + j + "-h", createRandomTagList(random), random.nextInt(30)));
-
-                    polygon = geometryFactory.createPolygon(new Coordinate[]{
-                            new Coordinate(j * 100 + 40, i * 100 + 10),
-                            new Coordinate(j * 100 + 40, i * 100 + 70),
-                            new Coordinate(j * 100 + 90, i * 100 + 70),
-                            new Coordinate(j * 100 + 90, i * 100 + 10),
-                            new Coordinate(j * 100 + 40, i * 100 + 10)});
-                    objectList.add(new PolygonObject(polygon, "House " + i + ":" + j, createRandomTagList(random), random.nextInt(70)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 25, i * 100 + 20));
-                    objectList.add(new PointObject(point, "Tree " + i + ":" + j + "-1", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 25, i * 100 + 40));
-                    objectList.add(new PointObject(point, "Tree " + i + ":" + j + "-2", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 25, i * 100 + 60));
-                    objectList.add(new PointObject(point, "Tree " + i + ":" + j + "-3", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 50, i * 100 + 20));
-                    objectList.add(new PointObject(point, "Inner-1 " + i + ":" + j + "-1", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 50, i * 100 + 40));
-                    objectList.add(new PointObject(point, "Inner-1 " + i + ":" + j + "-2", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 50, i * 100 + 60));
-                    objectList.add(new PointObject(point, "Inner-1 " + i + ":" + j + "-3", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 75, i * 100 + 20));
-                    objectList.add(new PointObject(point, "Inner-1 " + i + ":" + j + "-1", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 75, i * 100 + 40));
-                    objectList.add(new PointObject(point, "Inner-1 " + i + ":" + j + "-2", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 75, i * 100 + 60));
-                    objectList.add(new PointObject(point, "Inner-1 " + i + ":" + j + "-3", createRandomTagList(random), random.nextInt(40)));
-
-
-                } else if (i % 2 == 0) {
-                    lineString = geometryFactory.createLineString(new Coordinate[]{new Coordinate(j * 100 + 90, i * 100), new Coordinate(j * 100 + 90, i * 100 + 90)});
-                    objectList.add(new LineObject(lineString, "Street " + i + ":" + j + "-v", createRandomTagList(random), random.nextInt(30)));
-
-                    lineString = geometryFactory.createLineString(new Coordinate[]{new Coordinate(j * 100, i * 100 + 90), new Coordinate(j * 100 + 90, i * 100 + 90)});
-                    objectList.add(new LineObject(lineString, "Street " + i + ":" + j + "-h", createRandomTagList(random), random.nextInt(30)));
-
-                    polygon = geometryFactory.createPolygon(new Coordinate[]{
-                            new Coordinate(j * 100 + 10, i * 100 + 10),
-                            new Coordinate(j * 100 + 10, i * 100 + 70),
-                            new Coordinate(j * 100 + 60, i * 100 + 70),
-                            new Coordinate(j * 100 + 60, i * 100 + 10),
-                            new Coordinate(j * 100 + 10, i * 100 + 10)});
-                    objectList.add(new PolygonObject(polygon, "House " + i + ":" + j, createRandomTagList(random), random.nextInt(70)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 75, i * 100 + 20));
-                    objectList.add(new PointObject(point, "Tree " + i + ":" + j + "-1", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 75, i * 100 + 40));
-                    objectList.add(new PointObject(point, "Tree " + i + ":" + j + "-2", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 75, i * 100 + 60));
-                    objectList.add(new PointObject(point, "Tree " + i + ":" + j + "-3", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 50, i * 100 + 20));
-                    objectList.add(new PointObject(point, "Inner-1 " + i + ":" + j + "-1", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 50, i * 100 + 40));
-                    objectList.add(new PointObject(point, "Inner-1 " + i + ":" + j + "-2", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 50, i * 100 + 60));
-                    objectList.add(new PointObject(point, "Inner-1 " + i + ":" + j + "-3", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 25, i * 100 + 20));
-                    objectList.add(new PointObject(point, "Inner-2 " + i + ":" + j + "-1", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 25, i * 100 + 40));
-                    objectList.add(new PointObject(point, "Inner-2 " + i + ":" + j + "-2", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 25, i * 100 + 60));
-                    objectList.add(new PointObject(point, "Inner-2 " + i + ":" + j + "-3", createRandomTagList(random), random.nextInt(40)));
-
-
-                } else if (j % 2 == 0) {
-                    lineString = geometryFactory.createLineString(new Coordinate[]{new Coordinate(j * 100 + 10, i * 100 + 10), new Coordinate(j * 100 + 10, i * 100 + 100)});
-                    objectList.add(new LineObject(lineString, "Street " + i + ":" + j + "-v", createRandomTagList(random), random.nextInt(30)));
-
-                    lineString = geometryFactory.createLineString(new Coordinate[]{new Coordinate(j * 100 + 10, i * 100 + 10), new Coordinate(j * 100 + 100, i * 100 + 10)});
-                    objectList.add(new LineObject(lineString, "Street " + i + ":" + j + "-h", createRandomTagList(random), random.nextInt(30)));
-
-                    polygon = geometryFactory.createPolygon(new Coordinate[]{
-                            new Coordinate(j * 100 + 40, i * 100 + 30),
-                            new Coordinate(j * 100 + 40, i * 100 + 90),
-                            new Coordinate(j * 100 + 90, i * 100 + 90),
-                            new Coordinate(j * 100 + 90, i * 100 + 30),
-                            new Coordinate(j * 100 + 40, i * 100 + 30)});
-                    objectList.add(new PolygonObject(polygon, "House " + i + ":" + j, createRandomTagList(random), random.nextInt(70)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 25, i * 100 + 40));
-                    objectList.add(new PointObject(point, "Tree " + i + ":" + j + "-1", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 25, i * 100 + 60));
-                    objectList.add(new PointObject(point, "Tree " + i + ":" + j + "-2", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 25, i * 100 + 80));
-                    objectList.add(new PointObject(point, "Tree " + i + ":" + j + "-3", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 50, i * 100 + 40));
-                    objectList.add(new PointObject(point, "Inner-1 " + i + ":" + j + "-1", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 50, i * 100 + 60));
-                    objectList.add(new PointObject(point, "Inner-1 " + i + ":" + j + "-2", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 50, i * 100 + 80));
-                    objectList.add(new PointObject(point, "Inner-1 " + i + ":" + j + "-3", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 75, i * 100 + 40));
-                    objectList.add(new PointObject(point, "Inner-2 " + i + ":" + j + "-1", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 75, i * 100 + 60));
-                    objectList.add(new PointObject(point, "Inner-2 " + i + ":" + j + "-2", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 75, i * 100 + 80));
-                    objectList.add(new PointObject(point, "Inner-2 " + i + ":" + j + "-3", createRandomTagList(random), random.nextInt(40)));
-
-                } else {
-                    lineString = geometryFactory.createLineString(new Coordinate[]{new Coordinate(j * 100 + 90, i * 100 + 10), new Coordinate(j * 100 + 90, i * 100 + 100)});
-                    objectList.add(new LineObject(lineString, "Street " + i + ":" + j + "-v", createRandomTagList(random), random.nextInt(30)));
-
-                    lineString = geometryFactory.createLineString(new Coordinate[]{new Coordinate(j * 100, i * 100 + 10), new Coordinate(j * 100 + 90, i * 100 + 10)});
-                    objectList.add(new LineObject(lineString, "Street " + i + ":" + j + "-h", createRandomTagList(random), random.nextInt(30)));
-
-                    polygon = geometryFactory.createPolygon(new Coordinate[]{
-                            new Coordinate(j * 100 + 10, i * 100 + 30),
-                            new Coordinate(j * 100 + 10, i * 100 + 90),
-                            new Coordinate(j * 100 + 60, i * 100 + 90),
-                            new Coordinate(j * 100 + 60, i * 100 + 30),
-                            new Coordinate(j * 100 + 10, i * 100 + 30)});
-                    objectList.add(new PolygonObject(polygon, "House " + i + ":" + j, createRandomTagList(random), random.nextInt(70)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 75, i * 100 + 40));
-                    objectList.add(new PointObject(point, "Tree " + i + ":" + j + "-1", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 75, i * 100 + 60));
-                    objectList.add(new PointObject(point, "Tree " + i + ":" + j + "-2", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 75, i * 100 + 80));
-                    objectList.add(new PointObject(point, "Tree " + i + ":" + j + "-3", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 50, i * 100 + 40));
-                    objectList.add(new PointObject(point, "Inner-1 " + i + ":" + j + "-1", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 50, i * 100 + 60));
-                    objectList.add(new PointObject(point, "Inner-1 " + i + ":" + j + "-2", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 50, i * 100 + 80));
-                    objectList.add(new PointObject(point, "Inner-1 " + i + ":" + j + "-3", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 25, i * 100 + 40));
-                    objectList.add(new PointObject(point, "Inner-2 " + i + ":" + j + "-1", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 25, i * 100 + 60));
-                    objectList.add(new PointObject(point, "Inner-2 " + i + ":" + j + "-2", createRandomTagList(random), random.nextInt(40)));
-
-                    point = geometryFactory.createPoint(new Coordinate(j * 100 + 25, i * 100 + 80));
-                    objectList.add(new PointObject(point, "Inner-2 " + i + ":" + j + "-3", createRandomTagList(random), random.nextInt(40)));
-                }
-
-
-            }
-        }
-
-        checkMap.setObjects(objectList);
-
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.enable(SerializationFeature.INDENT_OUTPUT);
-
+        drawMapObjects(context);
         try {
-            mapper.writeValue(new File("output.json"), checkMap.getAllObjects().get(0));
-        } catch (JsonGenerationException e) {
-            e.printStackTrace();
-        } catch (JsonMappingException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+            ScreenPoint topLeft = sc.r2s(new Coordinate(request.getX() - request.getR(), request.getY() - request.getR()));
+            ScreenPoint bottomRight = sc.r2s(new Coordinate(request.getX() + request.getR(), request.getY() + request.getR()));
+
+            context.setStroke(Color.RED);
+            context.strokeOval(topLeft.getX(), bottomRight.getY(),
+                    - topLeft.getX() + bottomRight.getX() , topLeft.getY() - bottomRight.getY());
+
+            context.setStroke(Color.BLACK);
+        } catch (NullPointerException e) {
+
         }
 
     }
 
-
-    private ArrayList<Tags> createRandomTagList(Random random) {
-        ArrayList<Tags> list = new ArrayList<>();
-//        Random random = new Random();
-
-        int n = random.nextInt(4) + 1;
-        for (int i = 0; i < n; i++) {
-            int r = random.nextInt(Tags.values().length);
-            if (!list.contains(Tags.values()[r])) {
-                list.add(Tags.values()[r]);
+    private void drawMapObjects(GraphicsContext context) {
+        List<Geometry> geometries = new ArrayList<>();
+        List<MapObject> mapObjects = checkMap.getAllObjects();
+        for (MapObject mapObject : mapObjects) {
+            if (mapObject.equals(selectedMapObject)) {
+                drawMapObject(context, mapObject, Color.rgb(164, 212, 255), Color.rgb(0, 41, 255));
+            } else if (mapObject.equals(checkedMapObject)) {
+                drawMapObject(context, mapObject, Color.rgb(195, 255, 195), Color.rgb(68, 215, 0));
+            } else {
+                drawMapObject(context, mapObject, Color.WHITE, Color.BLACK);
             }
+
+        }
+    }
+
+    private void drawMapObject(GraphicsContext context, MapObject mapObject, Paint fillPaint, Paint strokePaint) {
+        switch (mapObject.getGeometry().getGeometryType()) {
+            case "Point":
+                drawPoint(context, (Point) mapObject.getGeometry(), fillPaint, strokePaint);
+                break;
+            case "LineString":
+                drawLineString(context, (LineString) mapObject.getGeometry(), fillPaint, strokePaint);
+                break;
+            case "Polygon":
+                drawPolygon(context, (Polygon) mapObject.getGeometry(), fillPaint, strokePaint);
+                break;
+        }
+    }
+
+    private void drawPoint(GraphicsContext context, Point point, Paint fillPaint, Paint strokePaint) {
+        ScreenPoint screenPoint = sc.r2s(point.getCoordinate());
+        context.setFill(fillPaint);
+        context.setStroke(strokePaint);
+
+        context.strokeLine(screenPoint.getX(), screenPoint.getY(), screenPoint.getX() + 1, screenPoint.getY() + 1);
+
+        context.setFill(Color.WHITE);
+        context.setStroke(Color.BLACK);
+    }
+
+    private void drawLineString(GraphicsContext context, LineString lineString, Paint fillPaint, Paint strokePaint) {
+        context.setFill(fillPaint);
+        context.setStroke(strokePaint);
+
+        Coordinate[] coordinates = lineString.getCoordinates();
+        for (int i = 0; i < coordinates.length - 1; i++) {
+            ScreenPoint point1 = sc.r2s(coordinates[i]);
+            ScreenPoint point2 = sc.r2s(coordinates[i + 1]);
+            context.strokeLine(point1.getX(), point1.getY(), point2.getX(), point2.getY());
         }
 
-        return list;
+        context.setFill(Color.WHITE);
+        context.setStroke(Color.BLACK);
+    }
+
+    //without holes
+    private void drawPolygon(GraphicsContext context, Polygon polygon, Paint fillPaint, Paint strokePaint) {
+        context.setFill(fillPaint);
+        context.setStroke(strokePaint);
+
+        Coordinate[] shell = polygon.getExteriorRing().getCoordinates();
+
+        Area area = new Area();
+        ScreenPoint point = sc.r2s(shell[0]);
+        context.beginPath();
+        context.moveTo(point.getX(), point.getY());
+        for (int i = 0; i < shell.length - 1; i++) {
+            point = sc.r2s(shell[i + 1]);
+            context.lineTo(point.getX(), point.getY());
+        }
+        context.closePath();
+        context.fill();
+        context.stroke();
+
+
+        context.setFill(Color.WHITE);
+        context.setStroke(Color.BLACK);
+    }
+
+    private Request request;
+
+    public void undoCheckin(ActionEvent actionEvent) {
+        try {
+            invoker.undoLastCommand();
+
+            request = invoker.getRequest();
+            checkedMapObject = checkMap.getMapObject(request.getUser());
+
+            nameTextField.setText(request.getUser().getName());
+            xTextField.setText(Double.toString(request.getX()));
+            yTextField.setText(Double.toString(request.getY()));
+            radiusTextField.setText(Double.toString(request.getR()));
+
+            CheckModel<Tags> checkModel = tagsCheckComboBox.getCheckModel();
+            checkModel.clearChecks();
+            //not working
+            for (int i = 0; i < request.getUser().getTags().size(); i++) {
+                checkModel.check(request.getUser().getTags().get(i));
+            }
+
+        } catch (NullPointerException e) {
+        }
+
+    }
+
+    public void changeComparator(ActionEvent actionEvent) {
+        checkMap.setComparatorType(comparatorSelector.getValue());
+    }
+
+
+    private void setObjectInf(MapObject mapObject) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Название: ").append(mapObject.getName()).append("\n")
+                .append("Тэги: ").append(mapObject.getTags().toString());
+
+
+        objectInf.setText(sb.toString());
     }
 }
