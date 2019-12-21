@@ -4,6 +4,9 @@
     <list default="true" id="4d3905f0-ec27-444f-9f4f-bd9c8567c07e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/command/CheckCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command/CheckCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/command/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command/Invoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/world/CheckMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/world/CheckMap.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +106,9 @@
       <workItem from="1575130501125" duration="14108000" />
       <workItem from="1575192703018" duration="8694000" />
       <workItem from="1575203532491" duration="12406000" />
+      <workItem from="1575489183092" duration="604000" />
+      <workItem from="1576601138594" duration="1053000" />
+      <workItem from="1576939800875" duration="589000" />
     </task>
     <task id="LOCAL-00001" summary="Added working Json Deserialization">
       <created>1575144650437</created>
@@ -142,6 +148,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1575196324582" />
+    <state x="437" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1576939864310">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="437" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.738@0.0.1366.738" timestamp="1576939864310" />
     <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1575215510820">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -150,22 +160,22 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1575130824644" />
-    <state width="1323" height="227" key="GridCell.Tab.0.bottom" timestamp="1575215454248">
+    <state width="1323" height="227" key="GridCell.Tab.0.bottom" timestamp="1575437576781">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="227" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1575215454248" />
-    <state width="1323" height="227" key="GridCell.Tab.0.center" timestamp="1575215454248">
+    <state width="1323" height="227" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1575437576781" />
+    <state width="1323" height="227" key="GridCell.Tab.0.center" timestamp="1575437576781">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="227" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1575215454248" />
-    <state width="1323" height="227" key="GridCell.Tab.0.left" timestamp="1575215454248">
+    <state width="1323" height="227" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1575437576781" />
+    <state width="1323" height="227" key="GridCell.Tab.0.left" timestamp="1575437576781">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="227" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1575215454248" />
-    <state width="1323" height="227" key="GridCell.Tab.0.right" timestamp="1575215454248">
+    <state width="1323" height="227" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1575437576781" />
+    <state width="1323" height="227" key="GridCell.Tab.0.right" timestamp="1575437576781">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="227" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1575215454248" />
+    <state width="1323" height="227" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1575437576781" />
     <state x="184" y="11" key="SettingsEditor" timestamp="1575130836415">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -174,10 +184,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1575130930954" />
-    <state x="379" y="192" key="com.intellij.ide.util.TipDialog" timestamp="1575203547376">
+    <state x="379" y="192" key="com.intellij.ide.util.TipDialog" timestamp="1576939802587">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="379" y="192" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1575203547376" />
+    <state x="379" y="192" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1576939802587" />
     <state x="782" y="41" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1575135369672">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

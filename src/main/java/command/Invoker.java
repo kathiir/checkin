@@ -32,10 +32,4 @@ public class Invoker {
         }
     }
 
-    public Request getRequest() {
-        if (!commandStack.empty()) {
-            return ((CheckCommand) commandStack.peek()).getRequest();
-        }
-        return null;
-    }
 }

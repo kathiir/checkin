@@ -1,12 +1,13 @@
 package command;
 
+import objects.MapObject;
 import world.CheckMap;
 import world.Request;
-import world.UserData;
 
 public class CheckCommand implements Command {
 
     private Request request;
+    private MapObject previous;
 
     public CheckCommand(Request request) {
         this.request = request;
@@ -14,15 +15,14 @@ public class CheckCommand implements Command {
 
     @Override
     public void execute(CheckMap checkMap) {
+        checkMap.getMapObject(request.getUser());
         checkMap.checkIn(request);
     }
 
     @Override
     public void unexecute(CheckMap checkMap) {
-        checkMap.checkout(request.getUser());
+//        checkMap.checkout(request.getUser());
+        checkMap.checkIn(request.getUser(), previous);
     }
 
-    public Request getRequest() {
-        return request;
-    }
 }

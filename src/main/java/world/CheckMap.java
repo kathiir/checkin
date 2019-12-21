@@ -8,6 +8,8 @@ import comparator.SimpleMapObjectComparator;
 import objects.MapObject;
 
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class CheckMap {
     private List<MapObject> objects;
@@ -48,14 +50,16 @@ public class CheckMap {
         gsc.setNumPoints(32);
         Geometry area = gsc.createCircle();
 
-        List<MapObject> list = new ArrayList<>();
-        for (MapObject object : objects) {
-            if (area.intersects(object.getGeometry())) {
-                list.add(object);
-                list.addAll(object.getAllChildren());
-            }
-        }
 
+        Stream<MapObject> stream = objects.stream()
+                .filter(object -> area.intersects(object.getGeometry()));
+
+        List<MapObject> list = stream.collect(Collectors.toList());
+        int n = list.size();
+
+        for (int i = 0; i < n; i++) {
+            list.addAll(list.get(i).getAllChildren());
+        }
 
         ComparatorFactory factory = new ComparatorFactory();
 
@@ -74,6 +78,11 @@ public class CheckMap {
         }
 
         map.get(o).add(request.getUser());
+    }
+
+    public void checkIn(UserData user, MapObject mapObject) {
+        checkout(user);
+        map.get(mapObject).add(user);
     }
 
     //--------------------//

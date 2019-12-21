@@ -89,6 +89,8 @@ public class Controller implements Initializable, ResizableCanvas.PaintListener 
         }
     }
 
+
+
     private ScreenPoint last = null;
 
     public void move(MouseEvent e) {
