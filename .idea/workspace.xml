@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d3905f0-ec27-444f-9f4f-bd9c8567c07e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/CheckThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/PaintInformation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/command/CheckCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command/CheckCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/command/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/command/Invoker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/world/CheckMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/world/CheckMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +29,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -49,6 +57,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
@@ -108,7 +117,13 @@
       <workItem from="1575203532491" duration="12406000" />
       <workItem from="1575489183092" duration="604000" />
       <workItem from="1576601138594" duration="1053000" />
-      <workItem from="1576939800875" duration="589000" />
+      <workItem from="1576939800875" duration="6183000" />
+      <workItem from="1577008160794" duration="3436000" />
+      <workItem from="1577169179684" duration="269000" />
+      <workItem from="1577169899390" duration="453000" />
+      <workItem from="1577213003545" duration="4988000" />
+      <workItem from="1577218281775" duration="638000" />
+      <workItem from="1577250196705" duration="285000" />
     </task>
     <task id="LOCAL-00001" summary="Added working Json Deserialization">
       <created>1575144650437</created>
@@ -124,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575215512663</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fixed bugs and added UI">
+      <created>1576940406752</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1576940406752</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,38 +166,42 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="137" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1575051052216" />
-    <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser" timestamp="1575196324582">
+    <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser" timestamp="1577216560105">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1575196324582" />
+    <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1577216560105" />
     <state x="437" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1576939864310">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="437" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.738@0.0.1366.738" timestamp="1576939864310" />
-    <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1575215510820">
+    <state x="430" y="215" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1577009261575">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1575215510820" />
+    <state x="430" y="215" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.738@0.0.1366.738" timestamp="1577009261575" />
+    <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1576940404917">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1576940404917" />
     <state x="463" y="123" key="FileChooserDialogImpl" timestamp="1575130824644">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1575130824644" />
-    <state width="1323" height="227" key="GridCell.Tab.0.bottom" timestamp="1575437576781">
+    <state width="1323" height="230" key="GridCell.Tab.0.bottom" timestamp="1577250483692">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="227" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1575437576781" />
-    <state width="1323" height="227" key="GridCell.Tab.0.center" timestamp="1575437576781">
+    <state width="1323" height="230" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1577250483692" />
+    <state width="1323" height="230" key="GridCell.Tab.0.center" timestamp="1577250483692">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="227" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1575437576781" />
-    <state width="1323" height="227" key="GridCell.Tab.0.left" timestamp="1575437576781">
+    <state width="1323" height="230" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1577250483692" />
+    <state width="1323" height="230" key="GridCell.Tab.0.left" timestamp="1577250483692">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="227" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1575437576781" />
-    <state width="1323" height="227" key="GridCell.Tab.0.right" timestamp="1575437576781">
+    <state width="1323" height="230" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1577250483692" />
+    <state width="1323" height="230" key="GridCell.Tab.0.right" timestamp="1577250483692">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="227" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1575437576781" />
+    <state width="1323" height="230" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1577250483692" />
     <state x="184" y="11" key="SettingsEditor" timestamp="1575130836415">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -184,10 +210,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="275" y="101" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1575130930954" />
-    <state x="379" y="192" key="com.intellij.ide.util.TipDialog" timestamp="1576939802587">
+    <state x="379" y="192" key="com.intellij.ide.util.TipDialog" timestamp="1577473810424">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="379" y="192" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1576939802587" />
+    <state x="379" y="192" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1577473810424" />
     <state x="782" y="41" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1575135369672">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -196,6 +222,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="492" y="285" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1575131200704" />
+    <state x="549" y="235" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup" timestamp="1577010699377">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="549" y="235" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup/0.0.1366.738@0.0.1366.738" timestamp="1577010699377" />
     <state x="389" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1575208072987">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

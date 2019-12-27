@@ -5,6 +5,8 @@ import com.sun.javafx.geom.Area;
 import command.CheckCommand;
 import command.Invoker;
 import comparator.MapObjectComparatorType;
+import javafx.animation.AnimationTimer;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.GraphicsContext;
@@ -16,11 +18,13 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
+import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
 import objects.*;
 import org.controlsfx.control.CheckComboBox;
 import com.vividsolutions.jts.geom.*;
 import org.controlsfx.control.CheckModel;
+import view.PaintInformation;
 import view.ResizableCanvas;
 import view.ScreenConverter;
 import view.ScreenPoint;
@@ -29,29 +33,31 @@ import world.Request;
 import world.Tags;
 import world.UserData;
 
+import javax.swing.Timer;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Controller implements Initializable, ResizableCanvas.PaintListener {
     public ResizableCanvas canvas;
-    public TextField radiusTextField;
-    public TextField nameTextField;
-    public CheckComboBox<Tags> tagsCheckComboBox;
-    public TextField xTextField;
-    public TextField yTextField;
-    public ComboBox<MapObjectComparatorType> comparatorSelector;
+
+
     public TextArea objectInf;
 
     private ScreenConverter sc;
-    private CheckMap checkMap;
+    private volatile CheckMap checkMap;
 
-    private Invoker invoker;
+    private volatile Invoker invoker;
 
-    private MapObject selectedMapObject, checkedMapObject;
+    private MapObject selectedMapObject;
+
+    private AnimationTimer timer;
+
+    Map<String, PaintInformation> paintInformationMap;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -59,36 +65,81 @@ public class Controller implements Initializable, ResizableCanvas.PaintListener 
         sc = new ScreenConverter(0, 500, 500, 500,
                 500, 500);
 
+        paintInformationMap = new ConcurrentHashMap<>();
+
         canvas.setPaintListener(this);
 
-        tagsCheckComboBox.getItems().setAll(Tags.values());
-
-        comparatorSelector.getItems().setAll(MapObjectComparatorType.values());
 
         invoker = new Invoker(checkMap);
-        canvas.paint();
+
+        timer = new AnimationTimer() {
+            @Override
+            public void handle(long now) {
+
+
+                canvas.paint();
+            }
+        };
+
+        timer.start();
+
+//        canvas.paint();
     }
+
+    UserData user1;
+    UserData user2;
+    UserData user3;
+    UserData user4;
+    UserData user5;
+
+    CheckThread thread1;
+    CheckThread thread2;
+    CheckThread thread3;
+    CheckThread thread4;
+    CheckThread thread5;
+
 
     public void checkIn(ActionEvent actionEvent) {
         try {
-            double r = Double.parseDouble(radiusTextField.getText());
-            double x = Double.parseDouble(xTextField.getText());
-            double y = Double.parseDouble(yTextField.getText());
+            try {
+                thread1.stopCheckIn();
+                thread2.stopCheckIn();
+                thread3.stopCheckIn();
+                thread4.stopCheckIn();
+                thread5.stopCheckIn();
+            } catch (NullPointerException e) {
 
-            UserData userData = new UserData(nameTextField.getText(),
-                    Arrays.asList(tagsCheckComboBox.getCheckModel().getCheckedItems().toArray(new Tags[0])));
-            request = new Request(x, y, r, userData);
-            invoker.doCommand(new CheckCommand(request));
+            }
+//            invoker.doCommand(new CheckCommand(request));
 
-            checkedMapObject = checkMap.getMapObject(userData);
+//            checkedMapObject = checkMap.getMapObject(userData);
 
-            setObjectInf(checkedMapObject);
+            user1 = new UserData("First", createRandomTagList());
+            thread1 = new CheckThread(user1, checkMap, this, 300, 300, 200, 1200);
 
-            canvas.paint();
+            user2 = new UserData("Second", createRandomTagList());
+            thread2 = new CheckThread(user2, checkMap, this, 120, 320, 150, 1400);
+
+            user3 = new UserData("Third", createRandomTagList());
+            thread3 = new CheckThread(user3, checkMap, this, 400, 120, 90, 900);
+
+            user4 = new UserData("Fourth", createRandomTagList());
+            thread4 = new CheckThread(user4, checkMap, this, 200, 400, 250, 1000);
+
+            user5 = new UserData("Fifth", createRandomTagList());
+            thread5 = new CheckThread(user5, checkMap, this, 300, 100, 180, 800);
+
+            thread1.start();
+            thread2.start();
+            thread3.start();
+            thread4.start();
+            thread5.start();
+
+
+//            canvas.paint();
         } catch (Exception ignored) {
         }
     }
-
 
 
     private ScreenPoint last = null;
@@ -156,7 +207,7 @@ public class Controller implements Initializable, ResizableCanvas.PaintListener 
 
         }
 
-        canvas.paint();
+//        canvas.paint();
     }
 
 
@@ -169,15 +220,32 @@ public class Controller implements Initializable, ResizableCanvas.PaintListener 
 
         drawMapObjects(context);
         try {
-            ScreenPoint topLeft = sc.r2s(new Coordinate(request.getX() - request.getR(), request.getY() - request.getR()));
-            ScreenPoint bottomRight = sc.r2s(new Coordinate(request.getX() + request.getR(), request.getY() + request.getR()));
+            for (Map.Entry<String, PaintInformation> entry :
+                    paintInformationMap.entrySet()) {
+                PaintInformation p = entry.getValue();
+                ScreenPoint topLeft = sc.r2s(new Coordinate(p.getX() - p.getR(), p.getY() - p.getR()));
+                ScreenPoint bottomRight = sc.r2s(new Coordinate(p.getX() + p.getR(), p.getY() + p.getR()));
 
-            context.setStroke(Color.RED);
-            context.strokeOval(topLeft.getX(), bottomRight.getY(),
-                    - topLeft.getX() + bottomRight.getX() , topLeft.getY() - bottomRight.getY());
+                if (entry.getKey().equals(thread1.getName())) {
+                    context.setStroke(Color.rgb(68, 215, 0));
+                } else if (entry.getKey().equals(thread2.getName())) {
+                    context.setStroke(Color.rgb(140, 0, 255));
+                } else if (entry.getKey().equals(thread3.getName())) {
+                    context.setStroke(Color.rgb(255, 12, 0));
+                } else if (entry.getKey().equals(thread4.getName())) {
+                    context.setStroke(Color.rgb(255, 255, 0));
+                } else {
+                    context.setStroke(Color.rgb(0, 255, 255));
+                }
+
+                context.strokeOval(topLeft.getX(), bottomRight.getY(),
+                        -topLeft.getX() + bottomRight.getX(), topLeft.getY() - bottomRight.getY());
+            }
+
 
             context.setStroke(Color.BLACK);
         } catch (NullPointerException e) {
+            e.printStackTrace();
 
         }
 
@@ -189,8 +257,16 @@ public class Controller implements Initializable, ResizableCanvas.PaintListener 
         for (MapObject mapObject : mapObjects) {
             if (mapObject.equals(selectedMapObject)) {
                 drawMapObject(context, mapObject, Color.rgb(164, 212, 255), Color.rgb(0, 41, 255));
-            } else if (mapObject.equals(checkedMapObject)) {
+            } else if (mapObject.equals(checkMap.getMapObject(user1))) {
                 drawMapObject(context, mapObject, Color.rgb(195, 255, 195), Color.rgb(68, 215, 0));
+            } else if (mapObject.equals(checkMap.getMapObject(user2))) {
+                drawMapObject(context, mapObject, Color.rgb(235, 181, 255), Color.rgb(140, 0, 255));
+            } else if (mapObject.equals(checkMap.getMapObject(user3))) {
+                drawMapObject(context, mapObject, Color.rgb(255, 207, 200), Color.rgb(255, 12, 0));
+            } else if (mapObject.equals(checkMap.getMapObject(user4))) {
+                drawMapObject(context, mapObject, Color.rgb(255, 255, 200), Color.rgb(255, 255, 0));
+            } else if (mapObject.equals(checkMap.getMapObject(user5))) {
+                drawMapObject(context, mapObject, Color.rgb(200, 255, 255), Color.rgb(0, 255, 255));
             } else {
                 drawMapObject(context, mapObject, Color.WHITE, Color.BLACK);
             }
@@ -261,36 +337,10 @@ public class Controller implements Initializable, ResizableCanvas.PaintListener 
         context.setStroke(Color.BLACK);
     }
 
-    private Request request;
 
-    public void undoCheckin(ActionEvent actionEvent) {
-        try {
-            invoker.undoLastCommand();
-
-            request = invoker.getRequest();
-            checkedMapObject = checkMap.getMapObject(request.getUser());
-
-            nameTextField.setText(request.getUser().getName());
-            xTextField.setText(Double.toString(request.getX()));
-            yTextField.setText(Double.toString(request.getY()));
-            radiusTextField.setText(Double.toString(request.getR()));
-
-            CheckModel<Tags> checkModel = tagsCheckComboBox.getCheckModel();
-            checkModel.clearChecks();
-            //not working
-            for (int i = 0; i < request.getUser().getTags().size(); i++) {
-                checkModel.check(request.getUser().getTags().get(i));
-            }
-
-        } catch (NullPointerException e) {
-        }
-
-    }
-
-    public void changeComparator(ActionEvent actionEvent) {
-        checkMap.setComparatorType(comparatorSelector.getValue());
-    }
-
+//    public void changeComparator(ActionEvent actionEvent) {
+//        checkMap.setComparatorType(comparatorSelector.getValue());
+//    }
 
     private void setObjectInf(MapObject mapObject) {
         StringBuilder sb = new StringBuilder();
@@ -299,5 +349,24 @@ public class Controller implements Initializable, ResizableCanvas.PaintListener 
 
 
         objectInf.setText(sb.toString());
+    }
+
+    public Invoker getInvoker() {
+        return invoker;
+    }
+
+    private ArrayList<Tags> createRandomTagList() {
+        ArrayList<Tags> list = new ArrayList<>();
+        Random random = new Random();
+
+        int n = random.nextInt(4) + 1;
+        for (int i = 0; i < n; i++) {
+            int r = random.nextInt(Tags.values().length);
+            if (!list.contains(Tags.values()[r])) {
+                list.add(Tags.values()[r]);
+            }
+        }
+
+        return list;
     }
 }

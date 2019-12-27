@@ -8,12 +8,13 @@ import comparator.SimpleMapObjectComparator;
 import objects.MapObject;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class CheckMap {
     private List<MapObject> objects;
-    private Map<MapObject, Set<UserData>> map;
+    private volatile Map<MapObject, Set<UserData>> map; //?
 
     private MapObjectComparatorType comparatorType;
 
@@ -24,7 +25,7 @@ public class CheckMap {
     }
 
     public CheckMap(List<MapObject> objects) {
-        map = new HashMap<>();
+        map = new ConcurrentHashMap<>();
         this.objects = new ArrayList<>();
         setObjects(objects);
         comparatorType = MapObjectComparatorType.SIMPLE;
@@ -32,11 +33,10 @@ public class CheckMap {
     }
 
     public void checkout(UserData userData) {
-        for (Set<UserData> set :
-                map.values()) {
-            if (set.contains(userData)) {
-                set.remove(userData);
-                return;
+        for (Map.Entry<MapObject, Set<UserData>> entry: map.entrySet()){
+            if (entry.getValue().contains(userData) ) {
+                entry.getValue().remove(userData);
+                entry.getKey().setPeopleCount(entry.getKey().getPeopleCount() - 1);
             }
         }
     }
@@ -49,7 +49,6 @@ public class CheckMap {
         gsc.setSize(2 * request.getR());
         gsc.setNumPoints(32);
         Geometry area = gsc.createCircle();
-
 
         Stream<MapObject> stream = objects.stream()
                 .filter(object -> area.intersects(object.getGeometry()));
@@ -70,18 +69,21 @@ public class CheckMap {
 
         MapObject o = list.get(0);
 
-
         for (int i = 1; i < list.size(); i++) {
             if (c.compare(list.get(i), o) > 0) {
                 o = list.get(i);
             }
         }
 
+        o.setPeopleCount(o.getPeopleCount() + 1);
         map.get(o).add(request.getUser());
+
+        System.out.println(o.getName() + " " + o.getTags() + " " + o.getPeopleCount());
     }
 
     public void checkIn(UserData user, MapObject mapObject) {
         checkout(user);
+        mapObject.setPeopleCount(mapObject.getPeopleCount() + 1);
         map.get(mapObject).add(user);
     }
 
@@ -99,7 +101,7 @@ public class CheckMap {
     private void setObjects(List<MapObject> list) {
         for (MapObject object :
                 list) {
-            System.out.println(object.getName());
+//            System.out.println(object.getName());
             map.put(object, new HashSet<>());
             addObjectToMap(object);
         }
@@ -179,4 +181,6 @@ public class CheckMap {
     public void setComparatorType(MapObjectComparatorType comparatorType) {
         this.comparatorType = comparatorType;
     }
+
+
 }

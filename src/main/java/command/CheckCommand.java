@@ -15,7 +15,7 @@ public class CheckCommand implements Command {
 
     @Override
     public void execute(CheckMap checkMap) {
-        checkMap.getMapObject(request.getUser());
+        previous = checkMap.getMapObject(request.getUser());
         checkMap.checkIn(request);
     }
 
